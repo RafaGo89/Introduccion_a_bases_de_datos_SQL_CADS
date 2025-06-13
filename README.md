@@ -21,9 +21,21 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - Tipos de bases de datos.
 - Modelo relacional.
 
-### Módulo 2: Lenguaje de definición de datos DDL
+### Módulo 2: MySQL
+- ¿Qué es MySQL?
+- ¿Por qué MySQL?
+- Instalación de MySQL.
+- Interfaz de MySQL
+
+### Módulo 3: Lenguaje de Definición de datos DDL
 - Comandos básicos.
 - Creación y eliminación de una base de datos.
 - Creación de tablas.
 - Definición de restricciones.
 - Modificación y eliminación de tablas.
+
+### Módulo 4: Lenguaje de Manipulación de datos DML
+- Inserción de registros.
+- Actualización de registros.
+- Eliminación de registros.
+- Creación de un respaldo de la base de datos.
