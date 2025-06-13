@@ -13,4 +13,4 @@ Que los participantes adquieran los conocimentos intermedios sobre bases de dato
 - Crear vistas, procedimientos almacenados y disparadores.
 
 ## ❗Justificación:
-El manejo de bases de datos es una habilidad necesaria para la gestión y análisis de datos, el desarrollo de software y la administración de sistemas.
+El comprender como se estructuran, funcionan y manipulan las bases de datos nos ayudará a mejorar las habilidades de gestión y análisis de datos, además de que estas son fundamentales en otras áreas como el desarrollo de software, administración de sistemas, inteligencia de negocios, desarrollo web, entre otros. 
