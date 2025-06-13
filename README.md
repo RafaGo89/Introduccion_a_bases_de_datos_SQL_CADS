@@ -16,9 +16,14 @@ Que los participantes adquieran los conocimentos intermedios sobre bases de dato
 El comprender como se estructuran, funcionan y manipulan las bases de datos nos ayudará a mejorar las habilidades de gestión y análisis de datos, además de que estas son fundamentales en otras áreas como el desarrollo de software, administración de sistemas, inteligencia de negocios, desarrollo web, entre otros. 
 
 ## 📃Contenido del curso
-### Módulo 1: Introducción a Bases de Datos
+### Módulo 1: Introducción a las Bases de Datos
 - ¿Qué es una base de datos?
 - Tipos de bases de datos.
 - Modelo relacional.
 
-  
+### Módulo 2: Lenguaje de definición de datos DDL
+- Comandos básicos.
+- Creación y eliminación de una base de datos.
+- Creación de tablas.
+- Definición de restricciones.
+- Modificación y eliminación de tablas.
