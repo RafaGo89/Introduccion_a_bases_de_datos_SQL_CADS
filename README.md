@@ -1,4 +1,4 @@
-# 🗂️Introducción a las bases de datos SQL CADS
+# 💻Introducción a las bases de datos SQL CADS
 ### Nombre del curso: Introducción a las Bases de datos SQL.
 ### Nombre del instructor: Rafael Rodríguez Gómez.
 ### Fecha: 12/06/2025
@@ -14,3 +14,11 @@ Que los participantes adquieran los conocimentos intermedios sobre bases de dato
 
 ## ❗Justificación:
 El comprender como se estructuran, funcionan y manipulan las bases de datos nos ayudará a mejorar las habilidades de gestión y análisis de datos, además de que estas son fundamentales en otras áreas como el desarrollo de software, administración de sistemas, inteligencia de negocios, desarrollo web, entre otros. 
+
+## 📃Contenido del curso
+### Módulo 1: Introducción a Bases de Datos
+- ¿Qué es una base de datos?
+- Tipos de bases de datos.
+- Modelo relacional.
+
+  
