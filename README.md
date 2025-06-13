@@ -1,4 +1,4 @@
-# 💻Introducción a las bases de datos SQL CADS
+# 💻Introducción a las bases de datos SQL / Curso CADS
 ### Nombre del curso: Introducción a las Bases de datos SQL.
 ### Nombre del instructor: Rafael Rodríguez Gómez.
 ### Fecha: 12/06/2025
