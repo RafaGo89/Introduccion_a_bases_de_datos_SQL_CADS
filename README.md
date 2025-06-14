@@ -39,3 +39,33 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - Actualización de registros.
 - Eliminación de registros.
 - Creación de un respaldo de la base de datos.
+
+### 💡Módulo 5: Consultas básicas
+- Consultas simples.
+- Clásula WHERE.
+- Uso de operadores aritméticos, de comparación y lógicos.
+- Clásula ORDER BY.
+  
+### 💡Módulo 6: Consultas con agrupaciones
+- Funciones de agregación.
+- Clásula GROUP BY.
+- Clásula HAVING.
+
+### 💡Módulo 7: Joins
+- ¿Qué es un JOIN?
+- INNER JOIN.
+- LEFT JOIN & RIGHT JOIN.
+- FULL JOIN.
+- SELF JOIN.
+
+### 💡Módulo 8: Funciones predefinidas
+- Funciones númericas
+- Funciones de texto.
+- Funciones de fecha.
+
+### 💡Módulo 9: Vistas
+- ¿Qué es una vista?
+- Creación de una vista.
+- Modificación de una vista.
+- Eliminaciónd de una vista.
+- Restricciones de las vistas.
