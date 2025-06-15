@@ -4,7 +4,7 @@
 ### Fecha: 12/06/2025
 
 ## 📍Objetivo general:
-Que los participantes adquieran los conocimentos intermedios sobre bases de datos relacionales y el lenguaje de manipulación de datos SQL para interactuar con una base de datos.
+Que los participantes adquieran los conocimentos básicos sobre bases de datos relacionales y el lenguaje de manipulación de datos SQL para interactuar con una base de datos.
 
 ## 📌Objetivos específicos:
 - Comprender la estructura de una base de datos relacional.
@@ -25,7 +25,7 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - ¿Qué es MySQL?
 - ¿Por qué MySQL?
 - Instalación de MySQL.
-- Interfaz de MySQL
+- Interfaz de MySQL.
 
 ### 💡Módulo 3: Lenguaje de Definición de datos DDL
 - Comandos básicos.
@@ -69,3 +69,13 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - Modificación de una vista.
 - Eliminaciónd de una vista.
 - Restricciones de las vistas.
+
+### 💡Módulo 10: Sub-consultas
+- Sub-consultas de una sola fila.
+- Sub-consultas de varias filas.
+- Uso de operadores IN, ANY, ALL y EXISTS.
+
+### 💡Módulo 11: Creación y gestión de usuarios
+- Creación de usuario.
+- Eliminación de usuario.
+- Comando GRANT y REVOKE.
