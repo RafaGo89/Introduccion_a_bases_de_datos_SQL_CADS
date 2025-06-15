@@ -19,6 +19,7 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - ¿Qué es una base de datos?
 - Tipos de bases de datos.
 - Modelo relacional.
+- ¿Qué es SQL?
 
 ### 💡Módulo 2: MySQL
 - ¿Qué es MySQL?
