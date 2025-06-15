@@ -9,8 +9,7 @@ Que los participantes adquieran los conocimentos básicos sobre bases de datos r
 ## 📌Objetivos específicos:
 - Comprender la estructura de una base de datos relacional.
 - Aplicar sentencias SQL para manipular y consultar datos.
-- Utilizar funciones, subconsultas y joins.
-- Crear vistas, procedimientos almacenados y disparadores.
+- Utilizar funciones, subconsultas, vistas y joins.
 
 ## ❗Justificación:
 El comprender como se estructuran, funcionan y manipulan las bases de datos nos ayudará a mejorar las habilidades de gestión y análisis de datos, además de que estas son fundamentales en otras áreas como el desarrollo de software, administración de sistemas, inteligencia de negocios, desarrollo web, entre otros. 
