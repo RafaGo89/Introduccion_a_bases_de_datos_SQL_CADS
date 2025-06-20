@@ -79,3 +79,6 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - Creación de usuario.
 - Eliminación de usuario.
 - Comando GRANT y REVOKE.
+
+## 📚Recursos:
+- [Presentación](https://www.canva.com/design/DAGqb1HtTN8/7ZqtL04n85Wt5lXDg9Vocw/edit?utm_content=DAGqb1HtTN8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) 
