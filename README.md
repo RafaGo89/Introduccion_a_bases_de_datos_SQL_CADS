@@ -12,7 +12,7 @@ Que los participantes adquieran los conocimentos básicos sobre bases de datos r
 - Utilizar funciones, subconsultas, vistas y joins.
 
 ## ❗Justificación:
-El comprender como se estructuran, funcionan y manipulan las bases de datos nos ayudará a mejorar las habilidades de gestión y análisis de datos, además de que estas son fundamentales en otras áreas como el desarrollo de software, administración de sistemas, inteligencia de negocios, desarrollo web, entre otros. 
+El comprender como se estructuran, funcionan y manipulan las bases de datos nos ayudará a mejorar las habilidades de gestión y análisis de datos, además de que estas son fundamentales en otras áreas como el desarrollo de software, administración de sistemas, inteligencia de negocios, desarrollo web, análisis de datos, entre otros. 
 
 ## 📃Contenido del curso
 ### 💡Módulo 1: Introducción a las Bases de Datos
