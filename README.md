@@ -81,4 +81,7 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - Comando GRANT y REVOKE.
 
 ## 📚Recursos:
-- [Presentación](https://www.canva.com/design/DAGqb1HtTN8/7ZqtL04n85Wt5lXDg9Vocw/edit?utm_content=DAGqb1HtTN8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) 
+- [Presentación](https://www.canva.com/design/DAGqb1HtTN8/7ZqtL04n85Wt5lXDg9Vocw/edit?utm_content=DAGqb1HtTN8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- [Descarga de MySQL](https://dev.mysql.com/downloads/installer/)
+- [Documenatación oficial de MySQL](https://dev.mysql.com/doc/)
+- [Documentación de W3school](https://www.w3schools.com/MySQL/default.asp)
