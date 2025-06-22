@@ -30,7 +30,7 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 ### 💡Módulo 3: Lenguaje de Definición de datos DDL
 - Comandos básicos.
 - Creación y eliminación de una base de datos.
-- Creación y eliminación de tablas.
+- Creación tablas.
 - Definición de restricciones.
 - Modificación y eliminación de tablas.
 
