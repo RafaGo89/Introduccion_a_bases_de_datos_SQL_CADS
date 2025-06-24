@@ -70,7 +70,9 @@ CREATE TABLE departamento(
     sueldo_minimo INT NOT NULL
 );
 
--- Añadiremos una llave foranea
+DESCRIBE departamento;
+
+-- Añadiremos una llave foranea a la tabla empleado
 ALTER TABLE empleado 
 ADD id_departamento CHAR(4);
 
