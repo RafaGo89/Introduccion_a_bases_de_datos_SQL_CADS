@@ -94,7 +94,7 @@ CREATE TABLE empleado(
     apellido_materno VARCHAR(20),
     fecha_nacimiento DATE,
     sueldo_mensual INT,
-    email VARCHAR(50) UNIQUE DEFAULT 'ejemplo@gmail.com',
+    email VARCHAR(50) UNIQUE,
     id_departamento CHAR(4),
     
     PRIMARY KEY (id),
