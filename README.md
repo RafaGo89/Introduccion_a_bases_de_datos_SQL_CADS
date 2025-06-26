@@ -85,4 +85,4 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - [Descarga de MySQL](https://dev.mysql.com/downloads/installer/)
 - [Documenatación oficial de MySQL](https://dev.mysql.com/doc/)
 - [Tipos de datos en MySQL](https://dev.mysql.com/doc/refman/8.4/en/data-types.html)
-- [Documentación de W3school](https://www.w3schools.com/MySQL/default.asp)
+- [Documentación de W3schools](https://www.w3schools.com/MySQL/default.asp)
