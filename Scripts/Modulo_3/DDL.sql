@@ -68,7 +68,7 @@ DESCRIBE empleado;
 -- Pequeño ejercicio: Creación de una segunda tabla
 CREATE TABLE departamento(
 	id CHAR(4) PRIMARY KEY,
-    nombre VARCHAR(20) NOT NULL,
+    nombre VARCHAR(20) NOT NULL UNIQUE,
     zona ENUM('Zona A', 'Zona B', 'Zona C'),
     sueldo_minimo INT NOT NULL
 );
