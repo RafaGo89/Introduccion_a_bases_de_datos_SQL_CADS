@@ -60,6 +60,9 @@ DESCRIBE empleado;
 ALTER TABLE empleado 
 MODIFY COLUMN sueldo_mensual INT NOT NULL DEFAULT 10000;
 
+ALTER TABLE empleado 
+MODIFY COLUMN email VARCHAR(50) UNIQUE;
+
 DESCRIBE empleado;
 
 -- Pequeño ejercicio: Creación de una segunda tabla
