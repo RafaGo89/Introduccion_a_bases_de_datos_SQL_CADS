@@ -93,7 +93,7 @@ CREATE TABLE empleado(
     apellido_paterno VARCHAR(20),
     apellido_materno VARCHAR(20),
     fecha_nacimiento DATE,
-    sueldo_mensual DECIMAL(7, 2),
+    sueldo_mensual INT,
     email VARCHAR(50) UNIQUE DEFAULT 'ejemplo@gmail.com',
     id_departamento CHAR(4),
     
