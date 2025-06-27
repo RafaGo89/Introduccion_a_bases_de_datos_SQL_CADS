@@ -27,6 +27,7 @@ CREATE TABLE nombre_tabla (
     columna3 tipo_de_dato [restriccion],
    ....
 );
+
 */
 
 -- Creamos una tabla
