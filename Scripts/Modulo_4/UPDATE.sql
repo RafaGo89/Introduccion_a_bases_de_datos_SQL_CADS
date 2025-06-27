@@ -114,7 +114,7 @@ SELECT * FROM empleado;
 -- Podemos usar operadores lógicos para actualizaciones más complejas
 
 -- Agregamos $10,000 al sueldo de los empleados del departamento D02
--- Y que hayan nacido después del año 2000
+-- Y que hayan nacido del año 2000 en adelante
 UPDATE empleado
 SET sueldo_mensual = sueldo_mensual + 10000
 WHERE id_departamento = 'D02' AND fecha_nacimiento >= '2000-01-01';
