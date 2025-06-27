@@ -1,6 +1,6 @@
 /*
 Introducción a las bases de datos SQL
-Modulo 4: DML
+Modulo 4: DML - INSERT
 */
 
 USE tienda;
