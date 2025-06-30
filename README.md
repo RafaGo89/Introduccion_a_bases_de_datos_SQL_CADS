@@ -40,7 +40,7 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - Eliminación de registros.
 - Creación de un respaldo de la base de datos.
 
-### 💡Módulo 5: Consultas básicas
+### 💡Módulo 5: Consultas básicas (DQL)
 - Consultas simples.
 - Clásula WHERE.
 - Uso de operadores aritméticos, de comparación y lógicos.
