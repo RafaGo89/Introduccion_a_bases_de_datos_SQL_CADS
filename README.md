@@ -34,17 +34,17 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - Definición de restricciones.
 - Modificación y eliminación de tablas.
 
-### 💡Módulo 4: Lenguaje de Manipulación de datos (DML)
-- Inserción de registros.
-- Actualización de registros.
-- Eliminación de registros.
-- Creación de un respaldo de la base de datos.
-
-### 💡Módulo 5: Consultas básicas (DQL)
+### 💡Módulo 4: Consultas básicas (DQL)
 - Consultas simples.
 - Clásula WHERE.
 - Uso de operadores aritméticos, de comparación y lógicos.
 - Clásula ORDER BY.
+
+### 💡Módulo 5: Lenguaje de Manipulación de datos (DML)
+- Inserción de registros.*
+- Actualización de registros.
+- Eliminación de registros.
+- Creación de un respaldo de la base de datos.
   
 ### 💡Módulo 6: Consultas con agrupaciones
 - Funciones de agregación.
