@@ -11,6 +11,8 @@ Estructura básica de una consulta
     
 */
 
+-- CONSULTAS BÁSCIAS
+
 -- Seleccionamos la base de datos con la que trabajaremos
 USE tienda;
 
@@ -62,3 +64,67 @@ SELECT DISTINCT id, id_departamento, nombre FROM empleado;
 SELECT nombre, id, sueldo_mensual
 FROM empleado
 LIMIT 10, 2;
+
+-- OPERADORES ARITMETICOS
+
+-- Podemos usar operadores aritmeticos en nuestras consultas
+SELECT 2 + 2;
+
+SELECT 10 / 5;
+
+SELECT (8 * 2) / 4;
+
+-- Obtener el sueldo semanal de los empleados
+SELECT sueldo_mensual
+FROM empleado;
+
+-- Sueldo semanal y agregamos un alias
+SELECT sueldo_mensual / 4 AS sueldo_semanal
+FROM empleado;
+
+-- Otra forma de poner un alias
+SELECT sueldo_mensual / 4 sueldo_semanal
+FROM empleado;
+
+DESCRIBE empleado;
+
+-- PEQUEÑO EJERCICIO
+
+-- Seleccionar el nombre, apellido materno, apellido paterno y sueldo anual
+-- de todos los empleados (agregar alias al sueldo anual)
+SELECT nombre, apellido_materno, apellido_paterno, sueldo_mensual * 12 AS sueldo_anual
+FROM empleado;
+
+-- ClÁUSULA WHERE & OPERADORES DE COMPARACIÓN
+SELECT * FROM empleado;
+
+-- Seleccionar a todos los empleados que tengan un sueldo (mensual) MAYOR a $15,000
+SELECT * 
+FROM empleado
+WHERE sueldo_mensual > 15000;
+
+-- Seleccionar a todos los empleados que tengan un sueldo (mensual) MAYOR O IGUAL a $15,000
+SELECT * 
+FROM empleado
+WHERE sueldo_mensual >= 15000;
+
+-- Seleccionar el nombre y sueldo mensual de los empleados que ganen EXACTAMENTE $16,000
+SELECT nombre, sueldo_mensual
+FROM empleado
+WHERE sueldo_mensual = 16000;
+
+-- Seleccionar el nombre y sueldo mensual de los empleados que NO ganen EXACTAMENTE $16,000
+SELECT nombre, sueldo_mensual
+FROM empleado
+WHERE sueldo_mensual <> 16000;
+
+-- Otra manera de hacerlo
+SELECT nombre, sueldo_mensual
+FROM empleado
+WHERE sueldo_mensual != 16000;
+
+-- Seleccionar el nombre, apellido materno y departamento de los empleados que se llamen 'Federico'
+SELECT nombre, apellido_materno, id_departamento
+FROM empleado
+WHERE nombre = 'Federico';
+
