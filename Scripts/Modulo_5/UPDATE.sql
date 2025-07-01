@@ -1,6 +1,6 @@
 /*
 Introducción a las bases de datos SQL
-Modulo 4: DML - Update
+Modulo 5: DML - Update
 */
 
 USE tienda;
