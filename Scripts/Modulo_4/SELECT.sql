@@ -11,6 +11,7 @@ Estructura básica de una consulta
     
 */
 
+
 -- CONSULTAS BÁSCIAS
 
 -- Seleccionamos la base de datos con la que trabajaremos
@@ -58,6 +59,7 @@ SELECT DISTINCT id_departamento FROM empleado;
 -- Se recomienda usar en una sola columna, pero se puede emplear en varias a la vez
 SELECT DISTINCT id, id_departamento, nombre FROM empleado;
 
+
 -- PEQUEÑO EJERCICIO
 
 -- Seleccionar el nombre, id y sueldo de los últimos 2 empleados
@@ -65,7 +67,8 @@ SELECT nombre, id, sueldo_mensual
 FROM empleado
 LIMIT 10, 2;
 
--- OPERADORES ARITMETICOS
+
+-- OPERADORES ARITMÉTICOS
 
 -- Podemos usar operadores aritmeticos en nuestras consultas
 SELECT 2 + 2;
@@ -88,12 +91,14 @@ FROM empleado;
 
 DESCRIBE empleado;
 
+
 -- PEQUEÑO EJERCICIO
 
 -- Seleccionar el nombre, apellido materno, apellido paterno y sueldo anual
 -- de todos los empleados (agregar alias al sueldo anual)
 SELECT nombre, apellido_materno, apellido_paterno, sueldo_mensual * 12 AS sueldo_anual
 FROM empleado;
+
 
 -- ClÁUSULA WHERE & OPERADORES DE COMPARACIÓN
 SELECT * FROM empleado;
@@ -128,3 +133,59 @@ SELECT nombre, apellido_materno, id_departamento
 FROM empleado
 WHERE nombre = 'Federico';
 
+
+-- PEQUEÑO EJERCICIO
+
+-- Seleccionar el id, nombre y sueldo semanal, de los empleados que ganen
+-- $5,000 o menos a la semana
+SELECT id, nombre, (sueldo_mensual / 4) AS sueldo_semanal
+FROM empleado
+WHERE (sueldo_mensual / 4) < 5000;
+
+-- Seleccionar el id, nombre, sueldo semanal, sueldo por 3 semanas
+-- de los empleados que ganen más de $10,000 en 3 semanas de trabajo
+SELECT id, 
+	   nombre, 
+       (sueldo_mensual / 4) AS sueldo_semanal, 
+	   (sueldo_mensual / 4) * 3 AS sueldo_por_3_semanas
+FROM empleado
+WHERE (sueldo_mensual / 4) * 3 > 10000;
+
+
+-- OPERADORES LÓGICOS
+
+-- Los operadores lógicos permiten crear filtros más específicos y complejos
+
+-- Seleccionar a todos los empleados con sueldo mayor a $20,000 Y que pertezcan al
+-- departamento 'D02'
+SELECT * 
+FROM empleado
+WHERE sueldo_mensual > 20000 AND id_departamento = 'D02';
+
+-- Seleccionar a todos los empleados con sueldo mayor a $20,000 O que pertezcan al
+-- departamento 'D02'
+SELECT * 
+FROM empleado
+WHERE sueldo_mensual > 20000 OR id_departamento = 'D02';
+
+-- Seleccionar a los empleados que no pertenezcan al departamento 'D01'
+SELECT *
+FROM empleado
+WHERE NOT id_departamento = 'D01';
+
+-- Obtener nombre y fecha de nacimiento de aquellos empleados que hayan nacido
+-- en el año 1999
+SELECT * 
+FROM empleado
+WHERE fecha_nacimiento >= '1999-01-01' AND fecha_nacimiento <= '1999-12-31';
+
+-- Otra manera de hacer lo anterior
+SELECT * 
+FROM empleado
+WHERE fecha_nacimiento > '1998-12-31' AND fecha_nacimiento < '2000-01-01';
+
+-- Obtener nombre y fecha de nacimiento de aquellos empleados que hayan nacido
+-- en del año 1999 al 2003
+SELECT * 
+FROM empleado
+WHERE fecha_nacimiento >= '1999-01-01' AND fecha_nacimiento <= '2003-12-31';
