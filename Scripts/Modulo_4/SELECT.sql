@@ -189,3 +189,23 @@ WHERE fecha_nacimiento > '1998-12-31' AND fecha_nacimiento < '2000-01-01';
 SELECT * 
 FROM empleado
 WHERE fecha_nacimiento >= '1999-01-01' AND fecha_nacimiento <= '2003-12-31';
+
+-- Seleccionar el apellido materno, el sueldo mensual y el departamento de los empleados que hayan nacido entre
+-- 1980 y 1985 O que ganen $10,000 o menos
+SELECT apellido_materno, sueldo_mensual, id_departamento 
+FROM empleado
+WHERE (fecha_nacimiento >= '1980-01-01' AND fecha_nacimiento <= '1985-12-31')
+      OR sueldo_mensual <= 10000;
+      
+      
+-- PEQUEÑO EJERCICIO
+
+-- Seleccionar todos los datos de los departamentos que NO pertenecen a la Zona A
+SELECT * FROM departamento
+WHERE NOT zona = 'Zona a';
+
+-- Seleccionar a todos los empleados que tengan como apellido paterno 'Baltazar'
+-- O que su apellido materno sea 'Peréz'
+SELECT * 
+FROM empleado
+WHERE apellido_paterno = 'Baltazar' OR apellido_materno = 'Peréz';
