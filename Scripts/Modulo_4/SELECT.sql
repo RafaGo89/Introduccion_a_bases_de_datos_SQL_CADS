@@ -209,3 +209,10 @@ WHERE NOT zona = 'Zona a';
 SELECT * 
 FROM empleado
 WHERE apellido_paterno = 'Baltazar' OR apellido_materno = 'Peréz';
+
+-- Obtener el nombre y sueldo semanal de aquellos empleados que hayan nacido después del
+-- año 2000 y pertenezcan al departamento D01, O que su sueldo semanal sea mayor o igual a $10,000
+SELECT nombre, sueldo_mensual / 4 AS sueldo_semanal
+FROM empleado
+WHERE (fecha_nacimiento > '2000-12-31' AND id_departamento = 'D01') 
+	  OR sueldo_mensual / 4 >= 10000;
