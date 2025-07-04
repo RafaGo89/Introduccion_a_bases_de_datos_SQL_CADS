@@ -38,13 +38,12 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - Consultas simples.
 - Clásula WHERE.
 - Uso de operadores aritméticos, de comparación y lógicos.
-- Clásula ORDER BY.
+- Clásula ORDER BY y manejo de valores NULL.
 
 ### 💡Módulo 5: Lenguaje de Manipulación de datos (DML)
 - Inserción de registros.*
-- Actualización de registros
+- Actualización de registros.
 - Eliminación de registros.
-- Creación de un respaldo de la base de datos.
   
 ### 💡Módulo 6: Consultas con agrupaciones
 - Funciones de agregación.
@@ -70,12 +69,7 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - Eliminaciónd de una vista.
 - Restricciones de las vistas.
 
-### 💡Módulo 10: Sub-consultas
-- Sub-consultas de una sola fila.
-- Sub-consultas de varias filas.
-- Uso de operadores IN, ANY, ALL y EXISTS.
-
-### 💡Módulo 11: Creación y gestión de usuarios
+### 💡Módulo 10: Creación y gestión de usuarios
 - Creación de usuario.
 - Eliminación de usuario.
 - Comando GRANT y REVOKE.
