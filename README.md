@@ -42,7 +42,7 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 
 ### 💡Módulo 5: Lenguaje de Manipulación de datos (DML)
 - Inserción de registros.*
-- Actualización de registros.
+- Actualización de registros
 - Eliminación de registros.
 - Creación de un respaldo de la base de datos.
   
