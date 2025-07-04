@@ -1,6 +1,6 @@
 /*
-Introducción a las bases de datos SQL
-Modulo 5: DML - INSERT
+	Introducción a las bases de datos SQL
+	Modulo 5: DML - INSERT
 */
 
 USE tienda;
@@ -65,6 +65,14 @@ VALUES
 (8, 'Beatriz', 'Ortega', 'Ortega', '1970-12-15', 13500, 'D03'),
 (9, 'Diana', 'Hernández', 'Peréz', '2003-08-08', 14000, 'D03'),
 (10, 'Pedro Luis', 'Murillo', 'Águila', '2000-03-25', 20000, 'D02');
+
+-- Revisamos los registros ingresados
+SELECT * FROM empleado;
+
+-- Podemos ingresar valores Nulos manualmente ingresando la palabra NULL
+INSERT INTO empleado (email, id, nombre, apellido_paterno, apellido_materno,
+					 fecha_nacimiento, sueldo_mensual, id_departamento)
+VALUES ('ferrerRR12@gmail.com', '13', 'Roberto', NULL, 'Ferrer', '1990-08-18', 23500, NULL);
 
 -- Revisamos los registros ingresados
 SELECT * FROM empleado;
