@@ -44,7 +44,7 @@ CREATE TABLE estacion(
 CREATE TABLE condicion_climatica(
 	id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR (50),
-    descripcion VARCHAR(100) COMMENT 'Descripcion corta'
+    descripcion VARCHAR(100)
 );
 
 -- Creamos una tabla los datos de temperatura, humedad, viento, etc.,
@@ -71,7 +71,7 @@ CREATE TABLE mantenimiento(
 	id INT PRIMARY KEY AUTO_INCREMENT,
     id_estacion CHAR(6) NOT NULL,
     fecha DATE NOT NULL,
-    DESCRIPCION VARCHAR(150) COMMENT 'Descripcion corta',
+    DESCRIPCION VARCHAR(150),
     
     FOREIGN KEY(id_estacion) REFERENCES estacion(id)
     ON UPDATE CASCADE
