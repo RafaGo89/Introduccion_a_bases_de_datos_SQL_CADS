@@ -123,6 +123,19 @@ SELECT MIN(poblacion)
 FROM ciudad
 WHERE id_pais = 'ARG';
 
--- Seleccionar la fecha de instalación más reciente de las estaciones
-SELECT MAX(fecha_instalacion)
+-- Seleccionar el nombre y fecha de instalación más reciente de las estaciones
+
+-- Declaramos la variable para guardar la fecha
+SET @fecha_mas_reciente = '';
+
+-- Guardamos la fecha más reciente usando MAX en la variable
+SELECT MAX(fecha_instalacion) INTO @fecha_mas_reciente
 FROM estacion;
+
+-- Visualiazmos la fecha
+SELECT @fecha_mas_reciente;
+
+-- Mostramos el nombre y la fecha de instalacion en base al filtro de la variable
+SELECT nombre, fecha_instalacion
+FROM estacion
+WHERE fecha_instalacion = @fecha_mas_reciente;
