@@ -39,6 +39,7 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - Clásula WHERE.
 - Uso de operadores aritméticos, de comparación y lógicos.
 - Clásula ORDER BY y manejo de valores NULL.
+- Otros operadores.
 
 ### 💡Módulo 5: Lenguaje de Manipulación de datos (DML)
 - Inserción de registros.*
