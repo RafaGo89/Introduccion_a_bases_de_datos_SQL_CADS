@@ -17,10 +17,11 @@ CREATE TABLE pais(
 
 -- Creamos la tabla de ciudades en las que se monitorea el clima
 CREATE TABLE ciudad(
-	id SMALLINT PRIMARY KEY AUTO_INCREMENT,
+	id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR (50) NOT NULL,
     id_pais CHAR(4) NOT NULL,
-    poblacion INT,
+    poblacion INT UNSIGNED,
+    superficie INT UNSIGNED,
     
     FOREIGN KEY (id_pais) REFERENCES pais(codigo_iso)
     ON UPDATE CASCADE
@@ -31,7 +32,7 @@ CREATE TABLE ciudad(
 CREATE TABLE estacion(
 	id CHAR(6) PRIMARY KEY,
     nombre VARCHAR (50) NOT NULL,
-    id_ciudad SMALLINT,
+    id_ciudad SMALLINT UNSIGNED,
     altitud DECIMAL(6,2),
     fecha_instalacion DATE,
     
@@ -42,7 +43,7 @@ CREATE TABLE estacion(
 
 -- Creamos una tabla para guardar los tipos de condiciones climaticas
 CREATE TABLE condicion_climatica(
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR (50),
     descripcion VARCHAR(100)
 );
@@ -50,13 +51,13 @@ CREATE TABLE condicion_climatica(
 -- Creamos una tabla los datos de temperatura, humedad, viento, etc.,
 -- por estación y ciudad.
 CREATE TABLE registros_clima(
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     id_estacion CHAR(6) NOT NULL,
     fecha_hora DATETIME NOT NULL,
     temperatura DECIMAL(5,2),
     humedad DECIMAL(5,2),
     velocidad_viento DECIMAL(6,2),
-    id_condicion_climatica INT NOT NULL,
+    id_condicion_climatica INT UNSIGNED NOT NULL,
     
     FOREIGN KEY(id_estacion) REFERENCES estacion(id)
     ON UPDATE CASCADE
@@ -68,7 +69,7 @@ CREATE TABLE registros_clima(
 
 -- Creamos una tabla para los mantenimientos realizados a las estaciones
 CREATE TABLE mantenimiento(
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     id_estacion CHAR(6) NOT NULL,
     fecha DATE NOT NULL,
     DESCRIPCION VARCHAR(150),
@@ -91,23 +92,24 @@ INSERT INTO pais (codigo_iso, nombre) VALUES
 ('CHL', 'Chile'),
 ('PER', 'Perú');
 
-INSERT INTO ciudad (nombre, id_pais, poblacion) VALUES
-('Ciudad de México', 'MEX', 9209944),
-('Guadalajara', 'MEX', 1495182),
-('Monterrey', 'MEX', 1135512),
-('Tonala', 'MEX', 500000),
-('Los Angeles', 'USA', 3898747),
-('Miami', 'USA', 442241),
-('Buenos Aires', 'ARG', 3075646),
-('Córdoba', 'ARG', 1391000),
-('São Paulo', 'BRA', 12330000),
-('Bogotá', 'COL', 7743955),
-('Madrid', 'ESP', 3265000),
-('Barcelona', 'ESP', 1636762),
-('Montreal', 'CAN', 1780000),
-('París', 'FRA', 2161000),
-('Santiago', 'CHL', 5743719),
-('Lima', 'PER', 9674755);
+INSERT INTO ciudad (nombre, id_pais, poblacion, superficie) VALUES
+('Ciudad de México', 'MEX', 9209944, 1495),        
+('Guadalajara', 'MEX', 1495182, 151),            
+('Monterrey', 'MEX', 1135512, 324),          
+('Tonala', 'MEX', 500000, 119),                   
+('Los Angeles', 'USA', 3898747, 1302),             
+('Miami', 'USA', 442241, 143),                    
+('Buenos Aires', 'ARG', 3075646, 203),           
+('Córdoba', 'ARG', 1391000, 576),             
+('São Paulo', 'BRA', 12330000, 1521),          
+('Bogotá', 'COL', 7743955, 1587),              
+('Madrid', 'ESP', 3265000, 605),                  
+('Barcelona', 'ESP', 1636762, 101),              
+('Montreal', 'CAN', 1780000, 431),                 
+('París', 'FRA', 2161000, 105),                   
+('Santiago', 'CHL', 5743719, 641),                
+('Lima', 'PER', 9674755, 2672);                    
+
 
 INSERT INTO estacion (id, nombre, id_ciudad, altitud, fecha_instalacion) VALUES
 ('MEX001', 'Estación CDMX Centro', 1, 2240.00, '2005-06-15'),
