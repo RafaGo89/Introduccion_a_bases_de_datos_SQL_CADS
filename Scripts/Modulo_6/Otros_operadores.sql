@@ -23,6 +23,13 @@ SELECT *
 FROM estacion
 WHERE fecha_instalacion BETWEEN '2010-01-01' AND '2015-12-31';
 
+-- Podemos emplear NOT para negar el Between
+
+-- Seleccionar las estaciones que NO se instalaron entre 2010 y 2015
+SELECT *
+FROM estacion
+WHERE fecha_instalacion NOT BETWEEN '2010-01-01' AND '2015-12-31';
+
 /* Sintaxis básica para usar el operador IN
 
 	SELECT column_name(s)
@@ -41,6 +48,13 @@ WHERE nombre IN ('Despejado', 'nevando', 'granizo', 'Calor extremo');
 SELECT *
 FROM ciudad
 WHERE id_pais IN ('MEX', 'USA');
+
+-- Podemos usar NOT para negar lo que hay dentro de IN
+
+-- Obtener las ciudades que NO son de México y Estados Unidos
+SELECT *
+FROM ciudad
+WHERE id_pais NOT IN ('MEX', 'USA');
 
 -- Seleccionar todos los datos de las ciudades con las siguientes ID's: 1, 5, 8 y 10
 SELECT *
@@ -92,6 +106,13 @@ SELECT *
 FROM condicion_climatica
 WHERE descripcion LIKE '_i%';
 
+-- Podemos usar NOT para negar el patrón de LIKE
+
+-- Seleccionar todas las estaciones que sean del 'Norte'
+SELECT * 
+FROM estacion
+WHERE nombre NOT LIKE '%Norte%';
+
 
 -- Pequeños ejercicios
 
@@ -101,11 +122,11 @@ SELECT id, descripcion
 FROM mantenimiento
 WHERE descripcion LIKE '%solar%';
 
--- Obtener el nombre y población de las ciudades con una población de entre 1,000,000 y 2,200,000
+-- Obtener el nombre y población de las ciudades que NO tengan una población entre 1,000,000 y 2,200,000
 -- Ordenado descendentemente por cantidad de población
 SELECT nombre, poblacion
 FROM ciudad
-WHERE poblacion BETWEEN 1000000 AND 2200000
+WHERE poblacion NOT BETWEEN 1000000 AND 2200000
 ORDER BY poblacion DESC;
 
 -- Obtener la población de las siguiente ciudades: Miami, Buenos Aires y Lima, ordenado ascendentemente
