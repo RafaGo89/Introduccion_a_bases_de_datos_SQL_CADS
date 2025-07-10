@@ -42,6 +42,11 @@ SELECT *
 FROM ciudad
 WHERE id_pais IN ('MEX', 'USA');
 
+-- Seleccionar todos los datos de las ciudades con las siguientes ID's: 1, 5, 8 y 10
+SELECT *
+FROM ciudad
+WHERE id IN (1, 5, 8, 10);
+
 /* Sintaxis básica para usar el operador BETWEEN
 
 	SELECT column1, column2, ...
@@ -60,23 +65,57 @@ SELECT *
 FROM estacion
 WHERE nombre LIKE '%Norte%';
 
--- Seleccionar todas las estaciones que terminen con la letra 'ed'
+-- Seleccionar todas las estaciones que terminen con la letra 'e'
 SELECT * 
 FROM estacion
 WHERE nombre LIKE '%e';
 
--- Seleccionar todas las ciudades que comiencen con la letra 'L' seguida de 3 caracteres
+-- Seleccionar todas las ciudades que comiencen con la letra 'L' seguida de 3 caracteres cualquiera
 SELECT *
 FROM ciudad
 WHERE nombre LIKE 'L___';
 
 -- Seleccionar todas las ciudades que que tengan 3 caracteres cualquiera al inicio,
--- seguidos de la letra 't' y 'e' y después 4 caracteres cualquiera
+-- seguidos de la letra 't' y 'e', y después 4 caracteres cualquiera
 SELECT *
 FROM ciudad
-WHERE nombre LIKE '___te_ _ _ _';
+WHERE nombre LIKE '___te____';
 
 -- Seleccionar las ciudades con una poblacion desde 9,000,000 a 9,999,999
 SELECT *
 FROM ciudad
 WHERE poblacion LIKE '9______';
+
+-- Seleccionar a las ciudades que en su descripcion contengan una palabra que tenga un caracter cualquiera
+-- al incio, después una 'i' y luego cualquier cantidad de caracteres
+SELECT *
+FROM condicion_climatica
+WHERE descripcion LIKE '_i%';
+
+
+-- Pequeños ejercicios
+
+-- Seleccionar la id y descripción de los mantenimientos hechos a las estaciones, de aquellos registros
+-- que contengan la palabra 'solar' dentro de su descripción
+SELECT id, descripcion
+FROM mantenimiento
+WHERE descripcion LIKE '%solar%';
+
+-- Obtener el nombre y población de las ciudades con una población de entre 1,000,000 y 2,200,000
+-- Ordenado descendentemente por cantidad de población
+SELECT nombre, poblacion
+FROM ciudad
+WHERE poblacion BETWEEN 1000000 AND 2200000
+ORDER BY poblacion DESC;
+
+-- Obtener la población de las siguiente ciudades: Miami, Buenos Aires y Lima, ordenado ascendentemente
+SELECT nombre, poblacion
+FROM ciudad
+WHERE nombre IN ('Miami', 'Buenos Aires', 'Lima')
+ORDER BY poblacion ASC;
+
+-- Obtener nombre y fecha de instalación de aquellas estaciones que se hayan instalado
+-- desde el 15 febrero de 2018 hasta el 19 febrero de 2019
+SELECT nombre, fecha_instalacion
+FROM estacion
+WHERE fecha_instalacion BETWEEN '2018-02-15' AND '2019-02-19';
