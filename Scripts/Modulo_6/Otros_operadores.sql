@@ -13,6 +13,11 @@ USE registro_climatico;
     
 */
 
+-- Vemos todos los metadatos de la tabla estación, en especial los comentarios 
+SHOW FULL COLUMNS FROM estacion;
+
+SHOW FULL COLUMNS FROM ciudad;
+
 -- Seleccionar las estaciones con una altitud de entre 100 a 500 metros
 SELECT *
 FROM estacion

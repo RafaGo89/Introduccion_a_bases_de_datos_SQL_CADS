@@ -21,7 +21,7 @@ CREATE TABLE ciudad(
     nombre VARCHAR (50) NOT NULL,
     id_pais CHAR(4) NOT NULL,
     poblacion INT UNSIGNED,
-    superficie INT UNSIGNED,
+    superficie INT UNSIGNED COMMENT 'Superficie en Km2',
     
     FOREIGN KEY (id_pais) REFERENCES pais(codigo_iso)
     ON UPDATE CASCADE
@@ -33,7 +33,7 @@ CREATE TABLE estacion(
 	id CHAR(6) PRIMARY KEY,
     nombre VARCHAR (50) NOT NULL,
     id_ciudad SMALLINT UNSIGNED,
-    altitud DECIMAL(6,2),
+    altitud DECIMAL(6,2) COMMENT 'Altitud en metros',
     fecha_instalacion DATE,
     
     FOREIGN KEY (id_ciudad) REFERENCES ciudad(id)
@@ -54,9 +54,9 @@ CREATE TABLE registros_clima(
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     id_estacion CHAR(6) NOT NULL,
     fecha_hora DATETIME NOT NULL,
-    temperatura DECIMAL(5,2),
-    humedad DECIMAL(5,2),
-    velocidad_viento DECIMAL(6,2),
+    temperatura DECIMAL(5,2) COMMENT 'Temperatura en grados celsius',
+    humedad DECIMAL(5,2) COMMENT 'Humedad en porcentaje',
+    velocidad_viento DECIMAL(6,2) COMMENT 'Velocidad del viento en Km/h',
     id_condicion_climatica INT UNSIGNED NOT NULL,
     
     FOREIGN KEY(id_estacion) REFERENCES estacion(id)
@@ -72,7 +72,7 @@ CREATE TABLE mantenimiento(
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     id_estacion CHAR(6) NOT NULL,
     fecha DATE NOT NULL,
-    DESCRIPCION VARCHAR(150),
+    descripcion VARCHAR(150),
     
     FOREIGN KEY(id_estacion) REFERENCES estacion(id)
     ON UPDATE CASCADE
@@ -98,7 +98,7 @@ INSERT INTO ciudad (nombre, id_pais, poblacion, superficie) VALUES
 ('Monterrey', 'MEX', 1135512, 324),          
 ('Tonala', 'MEX', 500000, 119),                   
 ('Los Angeles', 'USA', 3898747, 1302),             
-('Miami', 'USA', 442241, 143),                    
+('ciudadMiami', 'USA', 442241, 143),                    
 ('Buenos Aires', 'ARG', 3075646, 203),           
 ('Córdoba', 'ARG', 1391000, 576),             
 ('São Paulo', 'BRA', 12330000, 1521),          
