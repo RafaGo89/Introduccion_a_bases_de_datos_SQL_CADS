@@ -1,6 +1,6 @@
 /*
-Introducción a las bases de datos SQL
-Modulo 5: DML - Update
+	Introducción a las bases de datos SQL
+	Modulo 5: DML - Update
 */
 
 USE tienda;
@@ -59,8 +59,6 @@ SELECT * FROM empleado;
 -- Nos fijamos en el sueldo del empleado con ID 12
 SELECT * FROM empleado;
 
-SELECT * FROM departamento;
-
 -- Actualizamos el sueldo del empleado con ID 12 a $13,500
 UPDATE empleado
 SET sueldo_mensual = 13500
@@ -69,12 +67,12 @@ WHERE ID = 12;
 -- Vemos que el sueldo se ha actualizado
 SELECT * FROM empleado;
 
--- No fijamos en la fecha de nacimiento de Juan
-SELECT * FROM empleado;
-
 -- Podemos usar otro campo que no sea la llave primaria
 -- en la clausula WHERE, pero debemos quitar el modo seguro de MySQL
 SET SQL_SAFE_UPDATES = 0;
+
+-- No fijamos en la fecha de nacimiento de Juan
+SELECT * FROM empleado;
 
 -- Actualizamos la fecha de nacimiento del empleado llamado 'Juan'
 UPDATE empleado
