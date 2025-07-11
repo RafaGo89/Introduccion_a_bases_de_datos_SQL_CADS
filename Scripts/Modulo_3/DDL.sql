@@ -21,11 +21,11 @@ SHOW TABLES;
 
 /*Estructura básica para crear una tabla
 
-CREATE TABLE nombre_tabla (
+	CREATE TABLE nombre_tabla (
     columna1 tipo_de_dato [restriccion],
     columna2 tipo_de_dato [restriccion],
     columna3 tipo_de_dato [restriccion],
-   ....
+    ...
 );
 
 */
@@ -67,6 +67,8 @@ MODIFY COLUMN email VARCHAR(50) UNIQUE;
 DESCRIBE empleado;
 
 -- Pequeño ejercicio: Creación de una segunda tabla
+
+
 CREATE TABLE departamento(
 	id CHAR(4) PRIMARY KEY,
     nombre VARCHAR(30) NOT NULL UNIQUE,
@@ -100,4 +102,41 @@ CREATE TABLE empleado(
     
     PRIMARY KEY (id),
     FOREIGN KEY (id_departamento) REFERENCES departamento(id)
+);
+
+-- Creación de una tabla con llave primaria compuesta
+
+/*Estructura básica para crear una tabla con llave primaria compuesta
+
+	CREATE TABLE nombre_tabla (
+    columna1 tipo_de_dato NOT NULL,
+    columna2 tipo_de_dato NOT NULL,
+    columna3 tipo_de_dato [restriccion],
+    ...
+	PRIMARY KEY (columna1, columna2, ...)
+);
+
+*/
+
+-- Los campos que usaremos para crear una llave primaria deben de tener la restricción NOT NULL
+-- y se incluyen al final con la sentencia PRIMARY KEY
+CREATE TABLE curso_asignado(
+    id_profesor INT NOT NULL,
+    id_curso INT NOT NULL,
+    hora_inicio TIME,
+    hora_fin TIME,
+    fecha_inicio DATE,
+    
+    PRIMARY KEY (id_profesor, id_curso)
+);
+
+-- Para crear la llave foranea compuesta, especificamos los campos que son llave foranea, así como a que
+-- tablan referencian y cuales columnas son en la tabla referenciada
+CREATE TABLE curso_finalizado(
+	id INT PRIMARY KEY,
+    id_profesor INT NOT NULL,
+    id_curso INT NOT NULL,
+    notas TEXT,
+    
+    FOREIGN KEY (id_profesor, id_curso) REFERENCES curso_asignado (id_profesor, id_curso)
 );
