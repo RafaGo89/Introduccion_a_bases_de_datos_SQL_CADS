@@ -44,3 +44,16 @@ SELECT id_pais, SUM(poblacion) as suma_poblacion
 FROM ciudad
 GROUP BY id_pais
 ORDER BY poblacion DESC;
+
+-- Podemos agregar más funciones de agregación en un mismo GROUP BY
+SELECT id_pais, 
+       SUM(poblacion) AS suma_poblacion, 
+       AVG(poblacion) AS promedio_poblacion, 
+       SUM(superficie) AS suma_superficie
+FROM ciudad
+GROUP BY id_pais;
+
+-- Podemos usar más de un campo para crear agrupaciones
+select id_estacion, COUNT(*) 
+from mantenimiento
+GROUP BY id_estacion;
