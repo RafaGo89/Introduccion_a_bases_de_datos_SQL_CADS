@@ -54,6 +54,7 @@ FROM ciudad
 GROUP BY id_pais;
 
 -- Podemos usar más de un campo para crear agrupaciones
-select id_estacion, COUNT(*) 
+select id_estacion, fecha, COUNT(*) 
 from mantenimiento
-GROUP BY id_estacion;
+GROUP BY id_estacion, fecha
+ORDER BY COUNT(*);
