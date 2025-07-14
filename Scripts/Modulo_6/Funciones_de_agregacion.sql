@@ -79,8 +79,16 @@ WHERE nombre = 'Tonala' OR nombre = 'Barcelona' OR nombre = 'París';
 -- Declaramos una variable
 SET @max_poblacion = 0;
 
--- Guardamos un valor en esa variable con la sentencia SELECT INTO
+-- Visualizamos el valor de la variable
+SELECT @max_poblacion;
 
+-- Cambiamos el valor de la variable, y vemos que no hay problema is cambiamos el tipo de datos
+SET @max_poblacion = 'Hola';
+
+-- Visualizamos el valor de la variable
+SELECT @max_poblacion;
+
+-- Guardamos un valor en esa variable con la sentencia SELECT INTO
 -- Guardamos el valor de la población más grande en nuestra variable
 SELECT MAX(poblacion) INTO @max_poblacion 
 FROM ciudad;
