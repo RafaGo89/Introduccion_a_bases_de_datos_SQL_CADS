@@ -219,6 +219,7 @@ INSERT INTO mantenimiento (id_estacion, fecha, descripcion) VALUES
 ('ARG001', '2023-01-30', 'Reemplazo de batería y limpieza de panel solar'),
 ('MEX004', '2025-02-18', 'Limpieza por obstrucción del canal de lluvia'),
 ('USA001', '2024-12-01', 'Reemplazo de cableado dañado por roedores'),
+('USA001', '2024-12-10', 'Instalación de nuevo cableado'),
 ('FRA001', '2022-03-25', 'Revisión de cerraduras y acceso restringido'),
 ('MEX003', '2024-11-03', 'Limpieza de celda solar y domo del sensor UV'),
 ('CAN001', '2025-01-14', 'Actualización del firmware del sistema de adquisición');

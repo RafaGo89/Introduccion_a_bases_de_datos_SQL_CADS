@@ -54,7 +54,32 @@ FROM ciudad
 GROUP BY id_pais;
 
 -- Podemos usar más de un campo para crear agrupaciones
-select id_estacion, fecha, COUNT(*) 
-from mantenimiento
+
+-- Obtenemos las estaciones que recibieron mantenimiento, agrupadas por estación,
+-- y luego por fecha, es decir mantenimientos por estación y fecha
+SELECT id_estacion, fecha, COUNT(id_estacion) AS conteo_de_mantenimiento
+FROM mantenimiento
 GROUP BY id_estacion, fecha
-ORDER BY COUNT(*);
+ORDER BY id_estacion DESC, COUNT(id_estacion) DESC;
+
+
+-- Pequeños ejercicios
+
+-- Obtener la superficie promedio por país (Usar alias).
+SELECT id_pais, AVG(superficie) AS superficie_promedio
+FROM ciudad
+GROUP BY id_pais;
+
+-- Del ejercicio anterior, muestra los 3 países con mayor superficie promedio
+SELECT id_pais, AVG(superficie) AS superficie_promedio
+FROM ciudad
+GROUP BY id_pais
+ORDER BY AVG(superficie) DESC
+LIMIT 3;
+
+-- Obtener el conteo de mantenimientos recibidos por estación, ordenados de menor a mayor
+-- por el número de mantenimientos recibidos
+SELECT id_estacion, COUNT(id_estacion)
+FROM mantenimiento
+GROUP BY id_estacion
+ORDER BY COUNT(id_estacion) ASC;
