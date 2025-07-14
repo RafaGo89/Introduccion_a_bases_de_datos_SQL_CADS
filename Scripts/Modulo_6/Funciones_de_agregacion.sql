@@ -82,6 +82,12 @@ SET @max_poblacion = 0;
 -- Visualizamos el valor de la variable
 SELECT @max_poblacion;
 
+-- También podemos definirla con un valor NULL
+SET @max_poblacion = NULL;
+
+-- Visualizamos el valor de la variable
+SELECT @max_poblacion;
+
 -- Cambiamos el valor de la variable, y vemos que no hay problema is cambiamos el tipo de datos
 SET @max_poblacion = 'Hola';
 
