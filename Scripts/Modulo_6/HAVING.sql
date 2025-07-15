@@ -40,7 +40,7 @@ FROM mantenimiento
 GROUP BY id_estacion
 WHERE COUNT(id_estacion) > 2;
 
--- Pero si reemplazamos WHERE con HAVIGN, ahora sí funcionará
+-- Pero si reemplazamos WHERE con HAVING, ahora sí funcionará
 -- HAVING es como el WHERE pero cuando se aplican filtros a grupos
 SELECT id_estacion, COUNT(id_estacion)
 FROM mantenimiento
@@ -67,4 +67,49 @@ SELECT id_pais, SUM(poblacion) AS suma_poblacion
 FROM ciudad
 GROUP BY id_pais
 HAVING SUM(poblacion) > @poblacion_promedio
+ORDER BY SUM(poblacion) DESC;
+
+-- Obtener la temperatura promedio por estación de los registros ubicados en
+-- estaciones  Mexicanas
+SELECT id_estacion, AVG(temperatura) AS temperatura_promedio
+FROM registros_clima
+GROUP BY id_estacion
+HAVING id_estacion LIKE 'MEX%';
+
+-- Lo anterior se podría hacer con WHERE de esta manera
+SELECT id_estacion, AVG(temperatura) AS temperatura_promedio
+FROM registros_clima
+WHERE id_estacion LIKE 'MEX%'
+GROUP BY id_estacion;
+
+-- Obtener los registros de clima por estación, de aquellas estaciones con 5 o más
+-- registros almacenados
+SELECT id_estacion, COUNT(id_estacion) AS conteo_de_registros
+FROM registros_clima
+GROUP BY id_estacion
+HAVING COUNT(id_estacion) >= 5;
+
+
+-- Pequeños ejercicios
+
+-- Obtener las estaciones que hayan registrado una humedad máxima mayor al 95%
+SELECT id_estacion, MAX(humedad) AS humedad_maxima
+FROM registros_clima
+GROUP BY id_estacion
+HAVING MAX(humedad) > 95;
+
+-- Obtener las estaciones cuyo valor más pequeño de velocidad del viento registrado
+-- sea menor o igual 5 km/h. Ordenalo ascendentemente por la velocidad del viento
+SELECT id_estacion, MIN(velocidad_viento) AS velocidad_viento_minima
+FROM registros_clima
+GROUP BY id_estacion
+HAVING MIN(velocidad_viento) <= 5
+ORDER BY MIN(velocidad_viento) ASC;
+
+-- Obtener a los países con una población total de entre 5,000,000 y 10,000,000.
+-- Ordenados por población de manera descendente
+SELECT id_pais, SUM(poblacion) AS suma_poblacion
+FROM ciudad
+GROUP BY id_pais
+HAVING SUM(poblacion) BETWEEN 5000000 AND 10000000
 ORDER BY SUM(poblacion) DESC;
