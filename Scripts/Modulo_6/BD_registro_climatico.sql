@@ -17,7 +17,7 @@ CREATE TABLE pais(
 
 -- Creamos la tabla de ciudades en las que se monitorea el clima
 CREATE TABLE ciudad(
-	id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT, -- AUTO_INCREMENT = 100, manera de cambiar el valor incial del auto incremento
     nombre VARCHAR (50) NOT NULL,
     id_pais CHAR(4) NOT NULL,
     poblacion INT UNSIGNED,
