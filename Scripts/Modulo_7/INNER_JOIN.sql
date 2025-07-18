@@ -6,7 +6,7 @@
 -- Seleccionamos la base de datos
 USE registro_climatico;
 
-/* Sintaxis básica para usar INNER JOIN
+/* Sintaxis básica para usar INNER JOIN (explicito)
 
 	SELECT column_name(s)
 	FROM table1
@@ -69,8 +69,77 @@ WHERE estacion.altitud > 2000;
 -- por altitud de estación descendentemente
 SELECT *
 FROM ciudad
-INNER JOIN estacion
+JOIN estacion -- Escribir JOIN equivale a INNER JOIN
 ON ciudad.id = estacion.id_ciudad
 WHERE estacion.fecha_instalacion >= '2010-01-01'
       AND ciudad.id_pais = 'MEX'
 ORDER BY altitud DESC;
+
+/* Sintaxis básica para usar INNER JOIN (implícito)
+
+	SELECT column_name(s)
+	FROM table1, table2
+	WHERE table1.column_name = table2.column_name;
+    
+*/
+
+-- Realizar un INNER JOIN entra la tabla ciudad y estacion
+SELECT *
+FROM ciudad, estacion
+WHERE ciudad.id = estacion.id_ciudad;
+
+-- Obtener todas las estaciones ubicadas en españa, traer solo el nombre de la estación.
+SELECT estacion.nombre
+FROM estacion, ciudad
+WHERE estacion.id_ciudad = ciudad.id
+      AND ciudad.id_pais = 'COL';
+      
+-- También podemos realizar joins con más de 2 tablas
+
+-- Obtener el nombre de la estación, el nombre de la ciudad en donde se ubica
+-- y el país (nombre completo)
+SELECT pais.nombre AS Pais, 
+       ciudad.nombre AS Ciudad,
+       estacion.nombre AS Estacion
+FROM pais
+INNER JOIN ciudad
+ON pais.codigo_iso = ciudad.id_pais
+INNER JOIN estacion
+ON ciudad.id = estacion.id_ciudad;
+
+-- Podemos escribir el join en cualquier orden, siempre y cuando se cumplan
+-- de manera correcta las condiciones de unión
+SELECT pais.nombre AS Pais, 
+       ciudad.nombre AS Ciudad,
+       estacion.nombre AS Estacion
+FROM ciudad
+INNER JOIN estacion
+ON ciudad.id = estacion.id_ciudad
+INNER JOIN pais
+On ciudad.id_pais = pais.codigo_iso;
+
+
+-- Pequeños ejercicios
+
+-- Realizar un INNER JOIN entre la tabla estacion y registros_clima,
+-- traer el nombre de la estación, los registros de temperatura y la fecha y hora del registro
+-- Hacerlo por medio de un join ímplicito y usando alias
+SELECT e.nombre AS estacion,
+       rc.temperatura,
+       rc.fecha_hora
+FROM estacion AS e, registros_clima AS rc
+WHERE e.id = rc.id_estacion;
+
+-- Obtener los registros de las estaciones con nombre de la estación, temperatura y humedad
+-- registrada, fecha y hora del registro y condición climática registrada (nombre completo)
+-- Realizar por medio de un join explicito y usando alias
+SELECT e.nombre AS estacion,
+       rc.temperatura,
+       rc.humedad,
+       rc.fecha_hora,
+       cc.nombre AS condicion_climatica
+FROM estacion AS e
+INNER JOIN registros_clima AS rc
+ON e.id = rc.id_estacion
+INNER JOIN condicion_climatica AS cc
+ON rc.id_condicion_climatica = cc.id;
