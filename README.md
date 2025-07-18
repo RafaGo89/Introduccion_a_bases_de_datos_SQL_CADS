@@ -54,9 +54,9 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 ### 💡Módulo 7: Joins
 - ¿Qué es un JOIN?
 - INNER JOIN.
+- JOIN ímplicito
 - LEFT JOIN & RIGHT JOIN.
 - FULL JOIN.
-- SELF JOIN.
 
 ### 💡Módulo 8: Funciones predefinidas
 - Funciones númericas
