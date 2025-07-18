@@ -54,9 +54,9 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 ### 💡Módulo 7: Joins
 - ¿Qué es un JOIN?
 - INNER JOIN.
+- JOIN ímplicito
 - LEFT JOIN & RIGHT JOIN.
 - FULL JOIN.
-- SELF JOIN.
 
 ### 💡Módulo 8: Funciones predefinidas
 - Funciones númericas
@@ -81,3 +81,4 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 - [Documentación oficial de MySQL](https://dev.mysql.com/doc/)
 - [Tipos de datos en MySQL](https://dev.mysql.com/doc/refman/8.4/en/data-types.html)
 - [Documentación de W3schools](https://www.w3schools.com/MySQL/default.asp)
+- [Fundamentos de SQL (Libro)](https://pedrobeltrancanessa-biblioteca.weebly.com/uploads/1/2/4/0/12405072/fundamentos_de_sql_3edi_oppel.pdf)
