@@ -118,6 +118,18 @@ ON ciudad.id = estacion.id_ciudad
 INNER JOIN pais
 On ciudad.id_pais = pais.codigo_iso;
 
+-- Podemos usar el GROUP BY sin ningún problema en nuestro JOIN
+-- Obtenemos la cantidad de estaciones por país ordenado descendentemente por cantidad de estaciones
+SELECT pais.nombre AS Pais,
+       COUNT(estacion.id) AS cantidad_de_estaciones
+FROM ciudad
+INNER JOIN estacion
+ON ciudad.id = estacion.id_ciudad
+INNER JOIN pais
+On ciudad.id_pais = pais.codigo_iso
+GROUP BY pais
+ORDER BY cantidad_de_estaciones DESC;
+
 
 -- Pequeños ejercicios
 
@@ -143,3 +155,31 @@ INNER JOIN registros_clima AS rc
 ON e.id = rc.id_estacion
 INNER JOIN condicion_climatica AS cc
 ON rc.id_condicion_climatica = cc.id;
+
+-- Obtener el nombre de todas las estaciones que registraron que nevó
+SELECT estacion.nombre
+FROM estacion
+INNER JOIN registros_clima
+ON estacion.id = registros_clima.id_estacion
+INNER JOIN condicion_climatica
+ON registros_clima.id_condicion_climatica = condicion_climatica.id
+WHERE condicion_climatica.nombre = 'Nevada';
+
+-- Muestra los países (nombre) donde al menos una estación ha registrado 
+-- una condición climática de “Tormenta” y de aquellas estaciones instaladas
+-- a partir del 2010.
+-- NOTA: el nombre del país debe de aparecer una sola vez
+SELECT DISTINCT pais.nombre
+FROM pais
+
+INNER JOIN ciudad
+ON pais.codigo_iso = ciudad.id_pais
+INNER JOIN estacion
+ON ciudad.id = estacion.id_ciudad
+INNER JOIN registros_clima
+ON estacion.id = registros_clima.id_estacion
+INNER JOIN condicion_climatica
+ON registros_clima.id_condicion_climatica = condicion_climatica.id
+
+WHERE condicion_climatica.nombre = 'Tormenta'
+      AND estacion.fecha_instalacion >= '2010-01-01';
