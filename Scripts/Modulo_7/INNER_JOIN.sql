@@ -165,7 +165,7 @@ INNER JOIN condicion_climatica
 ON registros_clima.id_condicion_climatica = condicion_climatica.id
 WHERE condicion_climatica.nombre = 'Nevada';
 
--- Muestra los países (nombre) donde al menos una estación ha registrado 
+-- Muestra los países (nombre) donde alguna estación ha registrado 
 -- una condición climática de “Tormenta” y de aquellas estaciones instaladas
 -- a partir del 2010.
 -- NOTA: el nombre del país debe de aparecer una sola vez
@@ -183,3 +183,21 @@ ON registros_clima.id_condicion_climatica = condicion_climatica.id
 
 WHERE condicion_climatica.nombre = 'Tormenta'
       AND estacion.fecha_instalacion >= '2010-01-01';
+      
+-- Obtener los países que registraron más de 2 veces calor extremo
+SELECT DISTINCT pais.nombre, COUNT(*) AS conteo_de_calor_extremo
+FROM pais
+
+INNER JOIN ciudad
+ON pais.codigo_iso = ciudad.id_pais
+INNER JOIN estacion
+ON ciudad.id = estacion.id_ciudad
+INNER JOIN registros_clima
+ON estacion.id = registros_clima.id_estacion
+INNER JOIN condicion_climatica
+ON registros_clima.id_condicion_climatica = condicion_climatica.id
+
+WHERE condicion_climatica.nombre = 'Calor Extremo'
+
+GROUP BY pais.nombre
+HAVING conteo_de_calor_extremo > 2;
