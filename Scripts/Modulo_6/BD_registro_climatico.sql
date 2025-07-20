@@ -90,7 +90,8 @@ INSERT INTO pais (codigo_iso, nombre) VALUES
 ('FRA', 'Francia'),
 ('COL', 'Colombia'),
 ('CHL', 'Chile'),
-('PER', 'Perú');
+('PER', 'Perú'),
+('THA', 'Tailandia');
 
 INSERT INTO ciudad (nombre, id_pais, poblacion, superficie) VALUES
 ('Ciudad de México', 'MEX', 9209944, 1495),        
@@ -112,36 +113,40 @@ INSERT INTO ciudad (nombre, id_pais, poblacion, superficie) VALUES
 
 
 INSERT INTO estacion (id, nombre, id_ciudad, altitud, fecha_instalacion) VALUES
-('MEX001', 'Estación CDMX Centro', 1, 2240.00, '2005-06-15'),
+('MEX001', 'Estación CDMX Centro', 1, 2200.00, '2005-06-15'),
 ('MEX002', 'Estación Guadalajara Norte', 2, 1560.50, '2010-03-22'),
-('MEX003', 'Estación Monterrey Sur', 3, 540.00, '2012-10-01'),
+('MEX003', 'Estación Monterrey Sur', 3, 500.00, '2012-10-01'),
 ('MEX004', 'Estación Tonalá Oriente', 4, 1600.00, '2018-08-10'),
 ('USA001', 'L.A. Downtown Weather', 5, 89.30, '2000-11-10'),
 ('USA002', 'Miami Beach Station', 6, 2.50, '2013-05-25'),
 ('ARG001', 'Buenos Aires Sur', 7, 25.00, '2012-07-04'),
 ('ARG002', 'Córdoba Norte', 8, 390.00, '2016-04-12'),
 ('BRA001', 'São Paulo Este', 9, 760.00, '2015-09-13'),
-('COL001', 'Bogotá Centro', 10, 2640.00, '2017-06-18'),
-('ESP001', 'Madrid Clima Central', 11, 667.00, '2008-03-15'),
+('BRA002', 'São Paulo Estación Central', 9, 701.00, '2025-01-25'),
+('COL001', 'Bogotá Centro', 10, 2600.00, '2017-06-18'),
+('ESP001', 'Madrid Clima Central', 11, 600.00, '2008-03-15'),
 ('ESP002', 'Barcelona Puerto', 12, 12.00, '2011-11-01'),
-('CAN001', 'Montreal Norte', 13, 233.00, '2009-09-20'),
-('FRA001', 'Paris Estación Central', 14, 35.00, '2014-02-17'),
+('ESP003', 'Barcelona Estación del Clima', 12, 40.00, '2020-08-20'),
+('CAN001', 'Montreal Norte', 13, 225.00, '2009-09-20'),
+('FRA001', 'Paris Estación Central', 14, 31.00, '2014-02-17'),
 ('CHL001', 'Santiago Sur', 15, 520.00, '2019-01-20'),
-('MEX005', 'Estación CDMX Sur', 1, 2260.00, '2021-03-12'),
-('ARG003', 'Buenos Aires Norte', 7, 30.00, '2022-09-25'),
-('COL002', 'Bogotá Sur', 10, 2655.00, '2023-02-01'),
-('PER001', 'Lima Central', 16, 154.00, '2020-05-12');
+('MEX005', 'Estación CDMX Sur', 1, 2201.00, '2021-03-12'),
+('ARG003', 'Buenos Aires Norte', 7, 25.00, '2022-09-25'),
+('COL002', 'Bogotá Sur', 10, 2599.00, '2023-02-01'),
+('PER001', 'Lima Central', 16, 140.00, '2020-05-12');
 
 
 INSERT INTO condicion_climatica (nombre, descripcion) VALUES
 ('Despejado', 'Cielo sin nubes'),
 ('Nublado', 'Cielo mayormente cubierto'),
 ('Lluvia', 'Precipitación moderada o intensa'),
-('Tormenta', 'Lluvia fuerte con truenos'),
+('Tormenta', 'Lluvia fuerte'),
 ('Niebla', 'Visibilidad reducida por vapor de agua'),
 ('Nevada', 'Caída de nieve'),
 ('Granizo', 'Precipitación de bolas de hielo'),
-('Calor extremo', 'Temperatura muy elevada');
+('Calor extremo', 'Temperatura muy elevada'),
+('Tormenta eléctrica', 'Lluvia fuerte con truenos'),
+('Tormenta de arena', 'Fuertes vientos que levantan polvo');
 
 INSERT INTO registros_clima (id_estacion, fecha_hora, temperatura, humedad, velocidad_viento, id_condicion_climatica) VALUES
 ('MEX001', '2025-07-06 06:00:00', 13.8, 93.5, 14.1, 4),
