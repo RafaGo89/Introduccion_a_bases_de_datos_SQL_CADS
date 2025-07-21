@@ -99,7 +99,7 @@ INSERT INTO ciudad (nombre, id_pais, poblacion, superficie) VALUES
 ('Monterrey', 'MEX', 1135512, 324),          
 ('Tonala', 'MEX', 500000, 119),                   
 ('Los Angeles', 'USA', 3898747, 1302),             
-('ciudadMiami', 'USA', 442241, 143),                    
+('Miami', 'USA', 442241, 143),                    
 ('Buenos Aires', 'ARG', 3075646, 203),           
 ('Córdoba', 'ARG', 1391000, 576),             
 ('São Paulo', 'BRA', 12330000, 1521),          
@@ -109,7 +109,10 @@ INSERT INTO ciudad (nombre, id_pais, poblacion, superficie) VALUES
 ('Montreal', 'CAN', 1780000, 431),                 
 ('París', 'FRA', 2161000, 105),                   
 ('Santiago', 'CHL', 5743719, 641),                
-('Lima', 'PER', 9674755, 2672);                    
+('Lima', 'PER', 9674755, 2672),
+('Seattle', 'USA', 755078, 217),
+('San Miguel de Tucumán', 'ARG', 830000, 91),
+('San Luis Potosí', 'MEX', 845941 , 1443);                    
 
 
 INSERT INTO estacion (id, nombre, id_ciudad, altitud, fecha_instalacion) VALUES

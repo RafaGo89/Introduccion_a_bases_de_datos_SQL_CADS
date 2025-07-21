@@ -201,3 +201,31 @@ WHERE condicion_climatica.nombre = 'Calor Extremo'
 
 GROUP BY pais.nombre
 HAVING conteo_de_calor_extremo > 2;
+
+-- Obtener el nombre de la estación y la fecha del último registro de clima ingresado
+SELECT estacion.nombre AS Estacion,
+       MAX(registros_clima.fecha_hora) AS Ultimo_registro
+FROM estacion
+INNER JOIN registros_clima
+ON estacion.id = registros_clima.id_estacion
+GROUP BY estacion.nombre;
+
+
+-- Cosa Extra
+-- Obtener el nombre de la estación, la fecha del último registro de clima ingresado
+-- y el nombre de la condición climatica registrada
+SELECT estacion.nombre AS Estacion,
+	   registros_clima.fecha_hora AS Ultimo_registro,
+       condicion_climatica.nombre AS Condicion_climatica
+       
+FROM estacion
+INNER JOIN registros_clima
+ON estacion.id = registros_clima.id_estacion
+INNER JOIN condicion_climatica
+ON registros_clima.id_condicion_climatica = condicion_climatica.id
+
+WHERE CONCAT(registros_clima.id_estacion, registros_clima.fecha_hora) 
+                                     IN (SELECT CONCAT(id_estacion, 
+												MAX(fecha_hora)) 
+									     FROM registros_clima
+                                         GROUP BY id_estacion);
