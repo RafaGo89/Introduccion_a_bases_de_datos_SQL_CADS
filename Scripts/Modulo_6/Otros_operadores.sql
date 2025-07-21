@@ -84,6 +84,11 @@ SELECT *
 FROM estacion
 WHERE nombre LIKE '%Norte%';
 
+-- El LIKE por default ignora los acentos
+SELECT * 
+FROM estacion
+WHERE nombre LIKE '%Nórte%';
+
 -- Seleccionar todas las estaciones que terminen con la letra 'e'
 SELECT * 
 FROM estacion
@@ -118,6 +123,33 @@ SELECT *
 FROM estacion
 WHERE nombre NOT LIKE '%Norte%';
 
+-- Obtener el nombre de la estaciones que contengan la palabra 'Estación'
+-- con E mayúscula al principio
+SELECT nombre
+FROM estacion
+WHERE nombre COLLATE utf8mb4_bin LIKE '%Estación%';
+
+-- Obtener el nombre de la estaciones que contengan la palabra 'Estación'
+-- con e minúscula al principio
+SELECT nombre
+FROM estacion
+WHERE nombre COLLATE utf8mb4_bin LIKE '%estación%';
+
+-- Lo siguiente no regresará nada, pues no hay una estación que tenga
+-- la palabra 'EStación'
+SELECT nombre
+FROM estacion
+WHERE nombre COLLATE utf8mb4_bin LIKE '%EStación%';
+
+-- Igualmente afecta a los acentos. Lo siguiente no regresará nada
+SELECT nombre
+FROM estacion
+WHERE nombre COLLATE utf8mb4_bin LIKE '%Cordoba%';
+
+-- Pero si agregamos el acento obtendremos un resultado
+SELECT nombre
+FROM estacion
+WHERE nombre COLLATE utf8mb4_bin LIKE '%Córdoba%';
 
 -- Pequeños ejercicios
 

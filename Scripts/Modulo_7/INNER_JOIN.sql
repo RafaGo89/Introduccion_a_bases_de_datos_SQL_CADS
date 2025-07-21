@@ -211,6 +211,7 @@ ON estacion.id = registros_clima.id_estacion
 GROUP BY estacion.nombre;
 
 
+
 -- Cosa Extra
 -- Obtener el nombre de la estación, la fecha del último registro de clima ingresado
 -- y el nombre de la condición climatica registrada

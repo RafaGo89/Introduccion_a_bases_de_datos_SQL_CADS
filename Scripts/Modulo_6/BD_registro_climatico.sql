@@ -117,8 +117,8 @@ INSERT INTO ciudad (nombre, id_pais, poblacion, superficie) VALUES
 
 INSERT INTO estacion (id, nombre, id_ciudad, altitud, fecha_instalacion) VALUES
 ('MEX001', 'Estación CDMX Centro', 1, 2200.00, '2005-06-15'),
-('MEX002', 'Estación Guadalajara Norte', 2, 1560.50, '2010-03-22'),
-('MEX003', 'Estación Monterrey Sur', 3, 500.00, '2012-10-01'),
+('MEX002', 'estación Guadalajara Norte', 2, 1560.50, '2010-03-22'),
+('MEX003', 'estación Monterrey Sur', 3, 500.00, '2012-10-01'),
 ('MEX004', 'Estación Tonalá Oriente', 4, 1600.00, '2018-08-10'),
 ('USA001', 'L.A. Downtown Weather', 5, 89.30, '2000-11-10'),
 ('USA002', 'Miami Beach Station', 6, 2.50, '2013-05-25'),
@@ -136,7 +136,7 @@ INSERT INTO estacion (id, nombre, id_ciudad, altitud, fecha_instalacion) VALUES
 ('MEX005', 'Estación CDMX Sur', 1, 2201.00, '2021-03-12'),
 ('ARG003', 'Buenos Aires Norte', 7, 25.00, '2022-09-25'),
 ('COL002', 'Bogotá Sur', 10, 2599.00, '2023-02-01'),
-('PER001', 'Lima Central', 16, 140.00, '2020-05-12');
+('PER001', 'Lima central', 16, 140.00, '2020-05-12');
 
 
 INSERT INTO condicion_climatica (nombre, descripcion) VALUES
