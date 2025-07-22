@@ -24,7 +24,8 @@ CREATE TABLE maestro(
     id_departamento SMALLINT,
     jefe SMALLINT,
     
-    FOREIGN KEY (id_departamento) REFERENCES departamento(codigo)
+    FOREIGN KEY (id_departamento) REFERENCES departamento(codigo),
+    FOREIGN KEY (jefe) REFERENCES maestro(id)
 );
 
 -- Insertamos datos en la tabla de departamentos
