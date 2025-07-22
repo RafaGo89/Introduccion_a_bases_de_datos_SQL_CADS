@@ -127,29 +127,40 @@ WHERE nombre NOT LIKE '%Norte%';
 -- con E mayúscula al principio
 SELECT nombre
 FROM estacion
-WHERE nombre COLLATE utf8mb4_bin LIKE '%Estación%';
+WHERE nombre LIKE '%Estación%'
+COLLATE utf8mb4_bin;
 
 -- Obtener el nombre de la estaciones que contengan la palabra 'Estación'
 -- con e minúscula al principio
 SELECT nombre
 FROM estacion
-WHERE nombre COLLATE utf8mb4_bin LIKE '%estación%';
+WHERE nombre LIKE '%estación%'
+COLLATE utf8mb4_bin;
 
 -- Lo siguiente no regresará nada, pues no hay una estación que tenga
 -- la palabra 'EStación'
 SELECT nombre
 FROM estacion
-WHERE nombre COLLATE utf8mb4_bin LIKE '%EStación%';
+WHERE nombre LIKE '%EStación%'
+COLLATE utf8mb4_bin;
 
 -- Igualmente afecta a los acentos. Lo siguiente no regresará nada
 SELECT nombre
 FROM estacion
-WHERE nombre COLLATE utf8mb4_bin LIKE '%Cordoba%';
+WHERE nombre LIKE '%Cordoba%'
+COLLATE utf8mb4_bin;
 
 -- Pero si agregamos el acento obtendremos un resultado
 SELECT nombre
 FROM estacion
-WHERE nombre COLLATE utf8mb4_bin LIKE '%Córdoba%';
+WHERE nombre COLLATE utf8mb4_bin LIKE '%Córdoba%'
+COLLATE utf8mb4_bin;
+
+-- Mostrar los CHARACTER SET disponibles
+ SHOW CHARACTER SET;
+ 
+ -- Mostrar las COLLATIONS disponibles
+ SHOW COLLATION;
 
 -- Pequeños ejercicios
 
