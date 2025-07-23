@@ -14,7 +14,7 @@ Que los participantes adquieran los conocimentos básicos sobre bases de datos r
 
 * Comprender la estructura de una base de datos relacional.
 * Aplicar sentencias SQL para manipular y consultar datos.
-* Utilizar funciones, subconsultas, vistas y joins.
+* Utilizar funciones, vistas y joins.
 
 ## ❗Justificación:
 
