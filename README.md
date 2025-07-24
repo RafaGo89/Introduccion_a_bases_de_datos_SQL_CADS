@@ -69,14 +69,14 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 * ¿Qué es un JOIN?
 * INNER JOIN.
 * JOIN implícito
-* LEFT JOIN & RIGHT JOIN.
+* LEFT JOIN \& RIGHT JOIN.
 * FULL JOIN.
 * SELF JOIN.
 
 ### 💡Módulo 8: Funciones integradas
 
-* Funciones numéricas
 * Funciones de texto.
+* Funciones numéricas.
 * Funciones de fecha.
 
 ### 💡Módulo 9: Vistas

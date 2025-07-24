@@ -214,6 +214,9 @@ INSERT INTO registros_clima (id_estacion, fecha_hora, temperatura, humedad, velo
 
 INSERT INTO mantenimiento (id_estacion, fecha, descripcion) VALUES
 ('MEX001', '2024-12-20', 'Calibración anual de sensores de humedad'),
+('MEX001', '2024-12-25', 'Cambio de fibra óptica'),
+('MEX001', '2023-06-07', 'Reeparación de conexión a internet'),
+('MEX001', '2025-09-12', 'Instalación de nuevos paneles solares'),
 ('MEX002', '2025-01-10', 'Reemplazo de batería y limpieza de panel solar'),
 ('USA001', '2025-03-05', 'Verificación de conexión satelital'),
 ('ARG001', '2025-05-15', 'Actualización de software del módulo de viento'),

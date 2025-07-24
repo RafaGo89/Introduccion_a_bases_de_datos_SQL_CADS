@@ -151,10 +151,11 @@ AND condicion_climatica.nombre = 'Nevada';
 
 -- Obtener la temperatura y humedad promedio por país en base a los registros hechos por las
 -- estaciones. Incluir el nombre del país, la temperatura formateada así 30.0 °C 
--- y la humedad con formato 89.0%
+-- y la humedad con formato 89.0%.
+-- Redondear la temperatura a un decimal y la humedad a 2
 SELECT pais.nombre AS pais,
-       CONCAT(AVG(temperatura), ' °C') AS temp_promedio,
-       CONCAT(AVG(humedad), '%') AS humedad_promedio
+       CONCAT(ROUND(AVG(temperatura), 1), ' °C') AS temp_promedio,
+       CONCAT(ROUND(AVG(humedad), 2), '%') AS humedad_promedio
 FROM pais
 
 INNER JOIN ciudad
