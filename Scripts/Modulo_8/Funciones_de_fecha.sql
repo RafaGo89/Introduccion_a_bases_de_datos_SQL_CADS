@@ -99,10 +99,6 @@ SELECT DATE_FORMAT('2022-07-22', 'The %D of %M, %Y');
 
 -- Pequeños ejercicios
 
--- Obtener el nombre de las estaciones, si fecha de instalación
--- y su 'edad', los años que han pasado desde que se instalaron.
--- Ordena de las más antiguas a las más nueva
-
 -- Obtener nombre de la estacion, fecha de instalación y, por separado,
 -- solo el año, el mes (como número o nombre )y el día nombre. 
 -- Solo de las estaciones instaladas entre 2015 y el año actual
@@ -116,6 +112,9 @@ FROM estacion
 WHERE YEAR(fecha_instalacion) BETWEEN '2015' AND YEAR(CURDATE())
 ORDER BY YEAR(fecha_instalacion) DESC;
 
+-- Obtener el nombre de las estaciones, su fecha de instalación
+-- y su 'edad', los años que han pasado desde que se instalaron.
+-- Ordena de las más antiguas a las más nueva
 SELECT nombre,
 	   fecha_instalacion,
        TIMESTAMPDIFF(YEAR, fecha_instalacion, CURRENT_DATE()) AS edad_estacion

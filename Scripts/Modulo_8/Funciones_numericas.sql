@@ -98,9 +98,9 @@ INNER JOIN registros_clima
 ON estacion.id = registros_clima.id_estacion
 HAVING temperatura > 35;
 
--- Obtener los velocidad del viento promedio por país, para aquellos
--- países que tengan alguna estación instalada a más de 1000 metros de altura.
--- Redondear la velocidad del viento promedio a 3 decimales
+-- Obtener los velocidad del viento promedio por país
+-- Redondear la velocidad del viento promedio a 3 decimales.
+-- Ordenar por la velocidad del viento de mayor a menor
 SELECT pais.nombre AS pais,
        ROUND(AVG(velocidad_viento), 3) AS velocidad_viento_promedio
        
@@ -112,10 +112,8 @@ ON ciudad.id = estacion.id_ciudad
 INNER JOIN registros_clima
 ON estacion.id = registros_clima.id_estacion
 
-WHERE estacion.altitud > 1000
-
-GROUP BY pais;
-
+GROUP BY pais
+ORDER BY velocidad_viento_promedio DESC;
 
 -- Obtener 5 países junto con una ciudad aleatorias
 SELECT pais.nombre,
