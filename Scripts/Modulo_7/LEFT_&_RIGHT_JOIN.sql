@@ -89,7 +89,7 @@ ON mantenimiento.id_estacion = estacion.id
 WHERE mantenimiento.id_estacion IS NULL;
 
 -- Lista todas las ciudades (nombres) con sus estaciones meteorológicas (nombre),
--- incluso si no tienen ninguna estación. Usar RIGHT o LEFT JOIN
+-- incluso si no tienen ninguna estación. Usar RIGHT ó LEFT JOIN
 -- Ordena el resultado por nombre de ciudad (A-Z)
 SELECT ciudad.nombre AS Ciudad,
        estacion.nombre AS Estacion
