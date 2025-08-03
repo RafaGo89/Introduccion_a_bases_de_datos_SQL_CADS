@@ -59,20 +59,13 @@ FROM ciudad
 GROUP BY id_pais
 HAVING superficie_promedio_por_pais < 700;
 
--- Obtener los países que tienen una población mayor o igual a la del promedio, ordenado
--- de manera descendente por tamaño de poblacion
-
--- Primero obtenemos la población promedio de todos los países
-SELECT AVG(poblacion) INTO @poblacion_promedio
-FROM ciudad;
-
--- Mostramos el valor
-SELECT @poblacion_promedio;
-
-SELECT id_pais, SUM(poblacion) AS suma_poblacion
+-- Obtener las ciudades que tienen una población mayor o igual a la del promedio de todas las ciudades, 
+-- ordenado de manera descendente por tamaño de poblacion
+SELECT nombre, SUM(poblacion) AS suma_poblacion
 FROM ciudad
-GROUP BY id_pais
-HAVING suma_poblacion > @poblacion_promedio
+GROUP BY nombre
+HAVING suma_poblacion >= (SELECT AVG(poblacion)
+                          FROM ciudad)
 ORDER BY suma_poblacion DESC;
 
 -- Obtener la temperatura promedio por estación de los registros ubicados en

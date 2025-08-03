@@ -41,13 +41,13 @@ FROM customers
 WHERE salesRepEmployeeNumber IS NOT NULL
 ORDER BY creditLimit DESC;
 
--- 4. De la tabla order details, obtener el monto total por orden de venta.
+-- 5. De la tabla order details, obtener el monto total por orden de venta.
 SELECT orderNumber,
        SUM(quantityOrdered * priceEach) AS monto_total
 FROM orderdetails
 GROUP BY orderNumber;
 
--- 5. De la tabla order details, obtener las 5 ventas por orden
+-- 6. De la tabla order details, obtener las 5 ventas por orden
 -- con mayor monto total
 SELECT orderNumber,
        SUM(quantityOrdered * priceEach) AS monto_total
@@ -56,7 +56,7 @@ GROUP BY orderNumber
 ORDER BY monto_total DESC
 LIMIT 5;
 
--- 6. Obtener el nombre de producto y cuantas veces se vendió
+-- 7. Obtener el nombre de producto y cuantas veces se vendió
 SELECT products.productName,
        SUM(orderdetails.quantityOrdered) AS cantidad_vendida
 FROM orderdetails
@@ -64,7 +64,7 @@ INNER JOIN products
 ON orderdetails.productCode = products.productCode
 GROUP BY products.productname;
 
--- 7. Obtener todos los datos de los clientes que no han realizado
+-- 8. Obtener todos los datos de los clientes que no han realizado
 -- ninguna compra
 SELECT customers.*
 FROM customers
@@ -72,7 +72,7 @@ LEFT JOIN orders
 ON customers.customerNumber = orders.customerNumber
 WHERE orders.customerNumber IS NULL;
 
--- 8. Obtener el código y ciudad de las oficinas* y su cantidad de empleados.
+-- 9. Obtener el código y ciudad de las oficinas* y su cantidad de empleados.
 -- Ordenar de menor a mayor cantidad de empleados
 SELECT CONCAT(O.officeCode, '-', O.city) AS oficina_ciudad,
        COUNT(E.employeeNumber) AS conteo_de_empleados
@@ -82,7 +82,7 @@ ON O.officeCode = E.officeCode
 GROUP BY oficina_ciudad
 ORDER BY conteo_de_empleados ASC;
 
--- 9. Obtener nombre del cliente, checknumber, cantidad y fecha de pago
+-- 10. Obtener nombre del cliente, checknumber, cantidad y fecha de pago
 -- de aquellos empleados que tengan pagos por hacer, que su checknumber inicie
 -- con la letra A y tengan fecha de pago en Septiembre de 2003
 SELECT C.customerNumber,
@@ -95,7 +95,7 @@ ON P.customerNumber = C.customerNumber
 WHERE P.checkNumber LIKE 'A%'
 AND (MONTH(P.paymentDate) = 9 AND YEAR(P.paymentDate) = 2003);
 
--- 10. Modificar el precio de compra a $30.00 del producto con código S50_1341
+-- 11. Modificar el precio de compra a $30.00 del producto con código S50_1341
 SET sql_safe_updates = 0; -- Quitar modo seguro
 
 -- Antes del cambio
@@ -112,7 +112,7 @@ SELECT *
 FROM products
 WHERE productCode = 'S50_1341';
 
--- 11. Eliminar el registro del cliente con el códgio 169
+-- 12. Eliminar el registro del cliente con el códgio 169
 -- Antes de eliminarlo
 SELECT *
 FROM customers
@@ -126,7 +126,7 @@ SELECT *
 FROM customers
 WHERE customerNumber = 169;
 
--- 12. Añade al cliente 303 a la tabla payments, con un check number igual a BP973720,
+-- 13. Añade al cliente 303 a la tabla payments, con un check number igual a BP973720,
 -- fecha de pago igual a 1ro de Enero de 2005 y por una cantidad de 31700.00
 DESCRIBE payments;
 
@@ -138,7 +138,7 @@ SELECT *
 FROM payments
 WHERE customerNumber = 303;
 
--- 13. Obtener id, primer nombre y puesto del empleado, 
+-- 14. Obtener id, primer nombre y puesto del empleado, 
 -- así como id, primer nombre y puesto de la persona a la que reporta cada empleado.
 -- Incluir a los empleados que no tengan jefe
 SELECT employees.employeeNumber as employee_number,
@@ -150,4 +150,43 @@ SELECT employees.employeeNumber as employee_number,
 FROM employees
 LEFT JOIN employees AS boss
 ON employees.reportsTo = boss.employeeNumber;
-						
+
+SELECT PL.productLine,
+       P.productName,
+       SUM(OD.quantityOrdered)
+FROM productlines AS PL
+INNER JOIN products AS P
+ON PL.productLine = P.productLine
+INNER JOIN orderdetails AS OD
+ON P.productCode = OD.productCode
+
+GROUP BY PL.productLine, P.productName;
+
+-- 15.Lista los números de orden en los que se 
+-- hayan incluido productos de más de una línea (productLine).
+SELECT OD.orderNumber,
+       COUNT(DISTINCT PL.productLine) AS conteo_de_lineas
+       
+FROM orderdetails AS OD
+INNER JOIN products AS P
+ON OD.productCode = P.productCode
+INNER JOIN productlines AS PL
+ON P.productLine = PL.productLine
+
+GROUP BY OD.orderNumber
+HAVING conteo_de_lineas > 1;
+
+-- 16. Lista los empleados y la cantidad de clientes que tienen asignados, 
+-- junto con el nombre de su oficina. Ordenar por cantidad de clientes mayor a menor
+SELECT OFI.officeCode,
+       CONCAT(E.firstName," ", E.lastname) employee,
+       COUNT(*) AS cantidad_de_clientes
+       
+FROM offices AS OFI
+INNER JOIN employees AS E
+ON OFI.officeCode = E.officeCode
+INNER JOIN customers AS C
+ON E.employeeNumber = C.salesRepEmployeeNumber
+
+GROUP BY OFI.officeCode, employee
+ORDER BY cantidad_de_clientes DESC;

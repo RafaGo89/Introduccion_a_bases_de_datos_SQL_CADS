@@ -74,6 +74,14 @@ SELECT SUM(poblacion)
 FROM ciudad
 WHERE nombre = 'Tonala' OR nombre = 'Barcelona' OR nombre = 'París';
 
+-- Obtenemos la ciudad 'Más' pequeña en orden alfabético de A-Z
+SELECT MIN(nombre)
+FROM ciudad;
+
+-- Obtenemos la ciudad 'Más' grande en orden alfabético de Z-A
+SELECT MAX(nombre)
+FROM ciudad;
+
 -- Podemos usar variables en conjunto con las funciones de agregación
 
 -- Declaramos una variable
@@ -107,29 +115,22 @@ SELECT nombre AS 'Ciudad más poblada', poblacion
 FROM ciudad
 WHERE poblacion = @max_poblacion;
 
--- Obtenemos la ciudad 'Más' pequeña en orden alfabético de A-Z
-SELECT MIN(nombre)
-FROM ciudad;
-
--- Obtenemos la ciudad 'Más' grande en orden alfabético de Z-A
-SELECT MAX(nombre)
-FROM ciudad;
+-- Lo anterior también se puede realizar con una Subconsulta, si necesidad de usar una variable
+-- Obtenemos el nombre y poblacion de la ciudad con mayor poblacion
+SELECT nombre AS 'Ciudad más poblada', poblacion
+FROM ciudad
+WHERE poblacion = (SELECT MAX(poblacion) 
+                   FROM ciudad);
 
 -- Pequeños ejercicios
 
 -- Obtener nombre y población de las ciudades con una población
--- menor a la del promedio de todas las ciudades. Ordenarlas descendentemente
-SET @promedio_poblacion = 0;
-
-SELECT AVG(poblacion) INTO @promedio_poblacion
-FROM ciudad;
-
--- Visualizamos el promedio de poblacion
-SELECT @promedio_poblacion;
-
+-- menor a la del promedio de todas las ciudades. Ordenarlas descendentemente y hacerlo con
+-- subconculta
 SELECT nombre, poblacion
 FROM ciudad
-WHERE poblacion < @promedio_poblacion
+WHERE poblacion < (SELECT AVG(poblacion)
+                   FROM ciudad)
 ORDER BY poblacion DESC;
 
 -- Obtener la población de la ciudad más pequeña de Argentina
@@ -137,7 +138,7 @@ SELECT MIN(poblacion)
 FROM ciudad
 WHERE id_pais = 'ARG';
 
--- Seleccionar el nombre y fecha de instalación más reciente de las estaciones
+-- Seleccionar el nombre y fecha de instalación más reciente de las estaciones, hacerlo con variable
 
 -- Declaramos la variable para guardar la fecha
 SET @fecha_mas_reciente = '';
