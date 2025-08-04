@@ -68,7 +68,7 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 
 * ¿Qué es un JOIN?
 * INNER JOIN.
-* JOIN implícito
+* INNER JOIN implícito
 * LEFT JOIN \& RIGHT JOIN.
 * FULL JOIN.
 * SELF JOIN.
