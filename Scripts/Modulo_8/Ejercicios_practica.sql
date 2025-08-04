@@ -83,7 +83,7 @@ GROUP BY oficina_ciudad
 ORDER BY conteo_de_empleados ASC;
 
 -- 10. Obtener nombre del cliente, checknumber, cantidad y fecha de pago
--- de aquellos empleados que tengan pagos por hacer, que su checknumber inicie
+-- de aquellos clientes que tengan pagos por hacer, que su checknumber inicie
 -- con la letra A y tengan fecha de pago en Septiembre de 2003
 SELECT C.customerNumber,
        P.checkNumber,
@@ -150,17 +150,6 @@ SELECT employees.employeeNumber as employee_number,
 FROM employees
 LEFT JOIN employees AS boss
 ON employees.reportsTo = boss.employeeNumber;
-
-SELECT PL.productLine,
-       P.productName,
-       SUM(OD.quantityOrdered)
-FROM productlines AS PL
-INNER JOIN products AS P
-ON PL.productLine = P.productLine
-INNER JOIN orderdetails AS OD
-ON P.productCode = OD.productCode
-
-GROUP BY PL.productLine, P.productName;
 
 -- 15.Lista los números de orden en los que se 
 -- hayan incluido productos de más de una línea (productLine).
