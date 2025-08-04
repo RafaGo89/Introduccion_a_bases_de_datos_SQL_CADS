@@ -8,7 +8,7 @@
 
 ## 📍Objetivo general:
 
-Que los participantes adquieran los conocimentos básicos sobre bases de datos relacionales y el lenguaje de manipulación de datos SQL empleando el SGBD MySQL, para interactuar con una base de datos.
+Que los participantes adquieran los conocimientos básicos sobre bases de datos relacionales y el lenguaje de manipulación de datos SQL empleando el SGBD MySQL, para interactuar con una base de datos.
 
 ## 📌Objetivos específicos:
 
