@@ -56,6 +56,7 @@ WHERE condicion_climatica = 'Despejado';
 -- Podemos eliminar la tabla
 DROP TABLE estaciones_registros;
 
+
 /* Sintaxis básica para crear una tabla temporal
 
 	CREATE TEMPORARY TABLE table_name AS
@@ -84,4 +85,43 @@ FROM TMP_num_mantenimientos
 WHERE conteo_mantenimientos >= 3;
 
 -- También podemos eliminar la tabla temporal
-DROP TABLE TMP_num_mantenimientos;
+DROP TEMPORARY TABLE TMP_num_mantenimientos;
+
+
+-- EJEMPLO de como podemos usar las tablas temporales para consultas algo más complejas
+
+-- Obtener el nombre de la estación, la fecha del último registro de clima ingresado
+-- y el nombre de la condición climatica registrada
+
+-- Primero creamos una tabla temporal para guardar la estación y el último registro hecho por
+-- esa estación
+CREATE TEMPORARY TABLE TEMP_ultima_registro AS
+	SELECT E.id AS id,
+	       E.nombre AS Estacion,
+	       MAX(RC.fecha_hora) AS Ultimo_registro
+	     
+	FROM estacion AS E
+	INNER JOIN registros_clima AS RC
+	ON E.id = RC.id_estacion
+	
+	GROUP BY id, Estacion;
+	
+	-- Verificamos que nos regresa la tabla recién creada
+SELECT *
+FROM TEMP_ultima_registro;
+
+-- Realizamos una unión de nuestra tabla temporal con la de registros climaticos,
+-- para luego hacer otro join a condicion climatica y, por medio de la indentifiación
+-- de la estación y la fecha de su último registro, encontrar que condición climática se reportó
+SELECT UR.estacion,
+       UR.ultimo_registro,
+       CC.nombre AS condicion_climatica
+       
+FROM TEMP_ultima_registro AS UR
+INNER JOIN registros_clima AS RC
+ON UR.id = RC.id_estacion
+INNER JOIN condicion_climatica AS CC
+ON CC.id = RC.id_condicion_climatica
+
+WHERE UR.id = RC.id_estacion 
+AND UR.ultimo_registro = RC.fecha_hora;
