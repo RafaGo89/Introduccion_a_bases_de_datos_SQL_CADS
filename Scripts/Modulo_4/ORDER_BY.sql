@@ -4,11 +4,11 @@ Modulo 4: DQL - Clásula ORDER BY
 */
 
 /*
-Estructura básica de una consulta
+Estructura básica de una consulta con ORDER BY
 
 	SELECT column1, column2, ...
 	FROM table_name
-    ORDER BY column1, column2, ... ASC|DESC;
+   ORDER BY column1, column2, ... ASC|DESC;
     
 */
 
@@ -56,7 +56,7 @@ SELECT nombre, sueldo_mensual, fecha_nacimiento
 FROM empleado
 ORDER BY sueldo_mensual DESC, fecha_nacimiento ASC;
 
--- Si combinamos ORDER BY y LIMIT, podemos crear 'TOPS
+-- Si combinamos ORDER BY y LIMIT, podemos crear 'TOPS'
 
 -- Obtener nombre, apellido paterno y sueldo de los 5 empleados con mayor sueldo en la empresa
 SELECT nombre, apellido_paterno, sueldo_mensual
@@ -89,6 +89,7 @@ WHERE email IS NOT NULL;
 SELECT nombre, apellido_materno
 FROM empleado
 WHERE apellido_materno IS NULL;
+
 
 -- PEQUEÑO EJERCICIO
 

@@ -3,6 +3,11 @@ Introducción a las bases de datos SQL
 Modulo 3: DDL
 */
 
+/*Estructura básica para crear una base de datos
+
+	CREATE DATABASE nombre_base_de_datos;
+	
+*/
 -- Crear una base de datos
 CREATE DATABASE tienda;
 
@@ -18,7 +23,6 @@ USE tienda;
 -- Mostramos las tablas de la base de datos
 SHOW TABLES;
 
-
 /*Estructura básica para crear una tabla
 
 	CREATE TABLE nombre_tabla (
@@ -32,7 +36,7 @@ SHOW TABLES;
 
 -- Creamos una tabla
 CREATE TABLE empleado(
-	id INT PRIMARY KEY,
+	 id INT PRIMARY KEY,
     nombre VARCHAR(20) NOT NULL,
     apellido_paterno VARCHAR(20),
     apellido_materno VARCHAR(20),
@@ -53,7 +57,7 @@ ALTER TABLE empleado DROP COLUMN sueldo_mensual;
 DESCRIBE empleado;
 
 -- Añadimos una nueva columna
-ALTER TABLE empleado ADD sueldo_mensual FLOAT;
+ALTER TABLE empleado ADD COLUMN sueldo_mensual FLOAT;
 
 DESCRIBE empleado;
 
@@ -61,26 +65,44 @@ DESCRIBE empleado;
 ALTER TABLE empleado 
 MODIFY COLUMN sueldo_mensual INT NOT NULL DEFAULT 10000;
 
+DESCRIBE empleado;
+
 ALTER TABLE empleado 
 MODIFY COLUMN email VARCHAR(50) UNIQUE;
 
 DESCRIBE empleado;
 
--- Pequeño ejercicio: Creación de una segunda tabla
+-- Pequeño ejercicio: Creación de más tabla
 
+-- Crear una tabla llamada 'estatus' con
+-- Un campo código_status que sea entero y llave primaria
+-- Un campo nombre_status varchar de 20 caracteres y que no acepte valores nulos
+
+CREATE TABLE estatus (
+	codigo_status INT PRIMARY KEY,
+	nombre_status VARCHAR(20) NOT NULL		
+);
+
+DESCRIBE estatus;
+
+-- Crear una tabla llamada 'departamento', con 
+-- Un campo id que sea de tipo char a 4 caracteres y llave primaria
+-- Un campo nombre varchar a 30 caracteres que no admita nulos y sea unico
+-- Un campo zona para guardar ej. Zona A, Zona B, Zona C
+-- Un campo de sueldo mínimo que sea entero, que no admita nulos y el valor por default sea $10,500
 
 CREATE TABLE departamento(
-	id CHAR(4) PRIMARY KEY,
+	 id CHAR(4) PRIMARY KEY,
     nombre VARCHAR(30) NOT NULL UNIQUE,
     zona ENUM('Zona A', 'Zona B', 'Zona C'),
-    sueldo_minimo INT NOT NULL
+    sueldo_minimo INT NOT NULL DEFAULT 10500
 );
 
 DESCRIBE departamento;
 
--- Añadiremos una llave foranea a la tabla empleado
+-- Añadiremos una llave foranea a la tabla empleado, nuestra primera tabla
 ALTER TABLE empleado 
-ADD id_departamento CHAR(4);
+ADD id_departamento CHAR(4) NOT NULL;
 
 -- Convertimos la nueva columna a llave foranea
 ALTER TABLE empleado
@@ -91,7 +113,7 @@ DESCRIBE empleado;
 
 -- Otra manera de añadir la llavera foranea y la llave primaria
 CREATE TABLE empleado(
-	id INT,
+	 id INT,
     nombre VARCHAR(20) NOT NULL,
     apellido_paterno VARCHAR(20),
     apellido_materno VARCHAR(20),
@@ -133,7 +155,7 @@ CREATE TABLE curso_asignado(
 -- Para crear la llave foranea compuesta, especificamos los campos que son llave foranea, así como a que
 -- tablan referencian y cuales columnas son en la tabla referenciada
 CREATE TABLE curso_finalizado(
-	id INT PRIMARY KEY,
+	 id INT PRIMARY KEY,
     id_profesor INT NOT NULL,
     id_curso INT NOT NULL,
     notas TEXT,

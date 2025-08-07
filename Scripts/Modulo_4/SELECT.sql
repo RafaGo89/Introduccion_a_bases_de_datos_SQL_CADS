@@ -47,12 +47,12 @@ FROM empleado;
 SELECT fecha_nacimiento, apellido_paterno, nombre
 FROM empleado;
 
--- Podemos trar una columna más de una vez
+-- Podemos traer una columna más de una vez
 SELECT nombre, nombre, nombre
 FROM empleado;
 
 -- Podemos usar la cláusula DISTINCT para obtener valores únicos
-SELECT id_departamento FROM empleados;
+SELECT id_departamento FROM empleado;
 
 SELECT DISTINCT id_departamento FROM empleado;
 
@@ -62,10 +62,10 @@ SELECT DISTINCT id, id_departamento, nombre FROM empleado;
 
 -- PEQUEÑO EJERCICIO
 
--- Seleccionar el nombre, id y sueldo de los últimos 2 empleados
+-- Seleccionar el nombre, id y sueldo de los últimos 3 empleados
 SELECT nombre, id, sueldo_mensual
 FROM empleado
-LIMIT 10, 2;
+LIMIT 10, 3;
 
 
 -- OPERADORES ARITMÉTICOS
@@ -89,14 +89,15 @@ FROM empleado;
 SELECT sueldo_mensual / 4 sueldo_semanal
 FROM empleado;
 
-DESCRIBE empleado;
-
 
 -- PEQUEÑO EJERCICIO
 
 -- Seleccionar el nombre, apellido materno, apellido paterno y sueldo anual
 -- de todos los empleados (agregar alias al sueldo anual)
-SELECT nombre, apellido_materno, apellido_paterno, sueldo_mensual * 12 AS sueldo_anual
+SELECT nombre, 
+       apellido_materno, 
+		 apellido_paterno, 
+		 sueldo_mensual * 12 AS sueldo_anual
 FROM empleado;
 
 
@@ -113,15 +114,15 @@ SELECT *
 FROM empleado
 WHERE sueldo_mensual >= 15000;
 
--- Seleccionar el nombre y sueldo mensual de los empleados que ganen EXACTAMENTE $16,000
+-- Seleccionar el nombre y sueldo mensual de los empleados que ganen EXACTAMENTE $20,000
 SELECT nombre, sueldo_mensual
 FROM empleado
-WHERE sueldo_mensual = 16000;
+WHERE sueldo_mensual = 20000;
 
--- Seleccionar el nombre y sueldo mensual de los empleados que NO ganen EXACTAMENTE $16,000
+-- Seleccionar el nombre y sueldo mensual de los empleados que NO ganen EXACTAMENTE $20,000
 SELECT nombre, sueldo_mensual
 FROM empleado
-WHERE sueldo_mensual <> 16000;
+WHERE sueldo_mensual <> 20000;
 
 -- Otra manera de hacerlo
 SELECT nombre, sueldo_mensual
@@ -146,7 +147,7 @@ WHERE (sueldo_mensual / 4) < 5000;
 -- de los empleados que ganen más de $10,000 en 3 semanas de trabajo
 SELECT id, 
 	   nombre, 
-       (sueldo_mensual / 4) AS sueldo_semanal, 
+      (sueldo_mensual / 4) AS sueldo_semanal, 
 	   (sueldo_mensual / 4) * 3 AS sueldo_por_3_semanas
 FROM empleado
 WHERE (sueldo_mensual / 4) * 3 > 10000;
