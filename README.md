@@ -93,14 +93,14 @@ El comprender como se estructuran, funcionan y manipulan las bases de datos nos 
 * Eliminación de usuario.
 * Comando GRANT y REVOKE.
 
-## 📚Recursos:
-
-* [Presentación](https://www.canva.com/design/DAGqb1HtTN8/7ZqtL04n85Wt5lXDg9Vocw/edit?utm_content=DAGqb1HtTN8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-* [Descarga de MySQL](https://dev.mysql.com/downloads/installer/)
-* [Documentación oficial de MySQL](https://dev.mysql.com/doc/)
-* [Tipos de datos en MySQL](https://dev.mysql.com/doc/refman/8.4/en/data-types.html)
-* [Documentación de W3schools](https://www.w3schools.com/MySQL/default.asp)
-* [Fundamentos de SQL (Libro)](https://pedrobeltrancanessa-biblioteca.weebly.com/uploads/1/2/4/0/12405072/fundamentos_de_sql_3edi_oppel.pdf)
-* [Funciones numéricas y operadores](https://dev.mysql.com/doc/refman/8.4/en/numeric-functions.html)
-* [Funciones de fecha y tiempo](https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html)
-* [Funciones de cadenas de texto](https://dev.mysql.com/doc/refman/8.4/en/string-functions.html)
+>[!TIP]
+>## 📚Recursos:
+>* [Presentación](https://www.canva.com/design/DAGqb1HtTN8/7ZqtL04n85Wt5lXDg9Vocw/edit?utm_content=DAGqb1HtTN8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+>* [Descarga de MySQL](https://dev.mysql.com/downloads/installer/)
+>* [Documentación oficial de MySQL](https://dev.mysql.com/doc/)
+>* [Tipos de datos en MySQL](https://dev.mysql.com/doc/refman/8.4/en/data-types.html)
+>* [Documentación de W3schools](https://www.w3schools.com/MySQL/default.asp)
+>* [Fundamentos de SQL (Libro)](https://pedrobeltrancanessa-biblioteca.weebly.com/uploads/1/2/4/0/12405072/fundamentos_de_sql_3edi_oppel.pdf)
+>* [Funciones numéricas y operadores](https://dev.mysql.com/doc/refman/8.4/en/numeric-functions.html)
+>* [Funciones de fecha y tiempo](https://dev.mysql.com/doc/refman/8.4/en/date-and-time-functions.html)
+>* [Funciones de cadenas de texto](https://dev.mysql.com/doc/refman/8.4/en/string-functions.html)
