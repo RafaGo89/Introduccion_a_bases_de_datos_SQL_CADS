@@ -10,7 +10,7 @@
 
 Que los participantes adquieran los conocimientos básicos sobre bases de datos relacionales y el lenguaje de manipulación de datos SQL empleando el SGBD MySQL, para interactuar con una base de datos.
 
->[!IMPORTANT]
+>[!IMPORTANTE]
 >## 📌Objetivos específicos:
 >* Comprender la estructura de una base de datos relacional.
 >* Aplicar sentencias SQL para manipular y consultar datos.
