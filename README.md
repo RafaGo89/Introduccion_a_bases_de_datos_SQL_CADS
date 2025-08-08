@@ -20,21 +20,22 @@ Que los participantes adquieran los conocimientos básicos sobre bases de datos 
 
 El comprender como se estructuran, funcionan y manipulan las bases de datos nos ayudará a mejorar las habilidades de gestión y análisis de datos, además de que estas son fundamentales en otras áreas como el desarrollo de software, administración de sistemas, inteligencia de negocios, desarrollo web, análisis de datos, entre otros.
 
-## 📃Contenido del curso
+>[!IMPORTANT]
+>## 📃Contenido del curso
 
-### 💡Módulo 1: Introducción a las Bases de Datos
+>### 💡Módulo 1: Introducción a las Bases de Datos
 
-* ¿Qué es una base de datos?
-* Tipos de bases de datos.
-* Modelo relacional.
-* ¿Qué es SQL?
+>* ¿Qué es una base de datos?
+>* Tipos de bases de datos.
+>* Modelo relacional.
+>* ¿Qué es SQL?
 
 ### 💡Módulo 2: MySQL
-
-* ¿Qué es MySQL?
-* ¿Por qué MySQL?
-* Instalación de MySQL.
-* Interfaz de MySQL.
+>
+>* ¿Qué es MySQL?
+>* ¿Por qué MySQL?
+>* Instalación de MySQL.
+>* Interfaz de MySQL.
 
 ### 💡Módulo 3: Lenguaje de Definición de datos (DDL)
 
