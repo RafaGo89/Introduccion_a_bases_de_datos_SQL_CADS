@@ -12,8 +12,8 @@ Que los participantes adquieran los conocimientos básicos sobre bases de datos 
 
 ## 📌Objetivos específicos:
 * Comprender la estructura de una base de datos relacional.
-* Aplicar sentencias SQL para manipular y consultar datos.
-* Utilizar funciones, vistas y joins.
+* Aplicar las operaciones CRUD para manipular y administrar una base de datos.
+* Utilizar funciones, vistas, joins y gestión de usuarios.
 
 ## ❗Justificación:
 
