@@ -62,6 +62,20 @@ FROM mantenimiento
 GROUP BY id_estacion, fecha
 ORDER BY id_estacion DESC, COUNT(id_estacion) DESC;
 
+-- Si agregamos 'WIHT ROLLUP' al final de nuestro 'GROUP BY'
+-- Podremos crear un total general
+SELECT id_pais, 
+       SUM(poblacion) AS suma_poblacion
+FROM ciudad
+GROUP BY id_pais WITH ROLLUP;
+
+-- Para presentar un resultado más presentable, podemos usar la función
+-- IFNULL para ponerlo un nombre al campo que hace el gran total
+SELECT COALESCE(id_pais, 'TOTAL') AS 'id pais', 
+       SUM(poblacion) AS suma_poblacion
+FROM ciudad
+GROUP BY id_pais WITH ROLLUP;
+
 
 -- Pequeños ejercicios
 
@@ -78,8 +92,9 @@ ORDER BY AVG(superficie) DESC
 LIMIT 3;
 
 -- Obtener el conteo de mantenimientos recibidos por estación, ordenados de menor a mayor
--- por el número de mantenimientos recibidos
-SELECT id_estacion, COUNT(id_estacion)
+-- por el número de mantenimientos recibidos. Incluir el total de mantenimientos hechos
+SELECT COALESCE(id_estacion, 'Total mantenimientos') AS estacion, 
+       COUNT(id_estacion)
 FROM mantenimiento
-GROUP BY id_estacion
+GROUP BY id_estacion WITH ROLLUP
 ORDER BY COUNT(id_estacion) ASC;
