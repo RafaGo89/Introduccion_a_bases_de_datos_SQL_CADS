@@ -67,6 +67,7 @@ MODIFY COLUMN sueldo_mensual INT NOT NULL DEFAULT 10000;
 
 DESCRIBE empleado;
 
+-- Modificamos la columna email, no hace falta añadir de nuevo que será UNIQUE
 ALTER TABLE empleado 
 MODIFY COLUMN email VARCHAR(50);
 
