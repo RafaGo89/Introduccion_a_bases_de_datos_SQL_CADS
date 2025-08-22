@@ -12,7 +12,7 @@ Estructura básica de una consulta
 */
 
 
--- CONSULTAS BÁSCIAS
+-- CONSULTAS BÁSICAS
 
 -- Seleccionamos la base de datos con la que trabajaremos
 USE tienda;
