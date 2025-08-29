@@ -4,7 +4,7 @@
 */
 
 -- Seleccionamos la base de datos
-USE tienda;
+USE tienda_2;
 
 -- Mostramos las tablas que tiene esa base de datos
 SHOW TABLES;
@@ -22,25 +22,40 @@ DESCRIBE departamento;
 
 -- Insertamos un nuevo departamento en nuestra tabla
 INSERT INTO departamento (id, nombre, zona, sueldo_minimo)
-VALUES ('D01', 'Ventas', 'Zona A', '10000');
+VALUES ('D01', 'Ventas', 'Zona A', 10000);
 
 -- Comando básico para obtener datos de una tabla
 SELECT * FROM departamento;
 
 -- Otra forma de ingresar datos a una tabla sin especificar todos los campos
 INSERT INTO departamento 
-VALUES ('D02', 'Administración', 'Zona A', '15000');
+VALUES ('D02', 'Administración', 'Zona A', 15000);
 
 SELECT * FROM departamento;
 
 INSERT INTO departamento 
-VALUES ('D03', 'Recursos Humanos', 'Zona B','13500');
+VALUES ('D03', 'Gestión de talento', 'Zona A', 10500);
+
+SELECT * FROM departamento;
+
+-- La siguiente no funcionará ya que la llave primaria ya existe
+INSERT INTO departamento
+VALUES ('D03', 'Recursos humanos', 'Zona B', 13500);
+
+-- Pero podemos gestionarlo, aplicando una actualización si hay
+-- duplicidad de llaves primarias
+INSERT INTO departamento
+VALUES ('D03', 'Recursos humanos', 'Zona B', 13500)
+ON DUPLICATE KEY UPDATE
+	nombre = 'Recursos humanos',
+    zona = 'Zona B',
+    sueldo_minimo = 13500;
 
 SELECT * FROM departamento;
 
 -- Esto genera un error porque no existe la 'Zona D' debido al tipo de dato enum
 INSERT INTO departamento 
-VALUES ('D04', 'Informática', 'Zona D','14500');
+VALUES ('D04', 'Informática', 'Zona D', 14500);
 
 -- Ingresamos registros a nuestra segunda tabla
 INSERT INTO empleado (id, nombre, apellido_paterno, apellido_materno,
@@ -83,13 +98,6 @@ SELECT * FROM empleado;
 
 
 -- Pequeño ejercicio
-
--- Ingresar en la tabla estatus:
--- El estatus Alta con código 100,
--- El estatus Baja con código 101
-INSERT INTO estatus
-VALUES (100, 'Alta'),
-       (101, 'Baja');
 
 -- Ingresar en la tabla empleado:
 -- El empleado con nombre Jorge Navarro (sin apellido materno), con correo navarroAlas3@gmail.com
