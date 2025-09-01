@@ -63,9 +63,7 @@ SELECT DISTINCT id, id_departamento, nombre FROM empleado;
 -- PEQUEÑO EJERCICIO
 
 -- Seleccionar el nombre, id y sueldo de los últimos 3 empleados
-SELECT nombre, id, sueldo_mensual
-FROM empleado
-LIMIT 10, 3;
+
 
 
 -- OPERADORES ARITMÉTICOS
@@ -94,11 +92,7 @@ FROM empleado;
 
 -- Seleccionar el nombre, apellido materno, apellido paterno y sueldo anual
 -- de todos los empleados (agregar alias al sueldo anual)
-SELECT nombre, 
-       apellido_materno, 
-		 apellido_paterno, 
-		 sueldo_mensual * 12 AS sueldo_anual
-FROM empleado;
+
 
 
 -- ClÁUSULA WHERE & OPERADORES DE COMPARACIÓN
@@ -139,17 +133,11 @@ WHERE nombre = 'Federico';
 
 -- Seleccionar el id, nombre y sueldo semanal, de los empleados que ganen
 -- $5,000 o menos a la semana
-SELECT id, nombre, (sueldo_mensual / 4) AS sueldo_semanal
-FROM empleado
-WHERE (sueldo_mensual / 4) <= 5000;
+
 
 -- Seleccionar el id, nombre y sueldo diario (considerando una semana de trabajo de 6 dias)
 -- de los empleados que ganen más de 800 pesos diarios
-SELECT id, 
-	   nombre, 
-      ((sueldo_mensual / 4) / 6) AS sueldo_diario
-FROM empleado
-WHERE ((sueldo_mensual / 4) / 6) > 800;
+
 
 
 -- OPERADORES LÓGICOS
@@ -201,18 +189,11 @@ WHERE (fecha_nacimiento >= '1980-01-01' AND fecha_nacimiento <= '1985-12-31')
 -- PEQUEÑO EJERCICIO
 
 -- Seleccionar todos los datos de los departamentos que NO pertenecen a la Zona A
-SELECT * FROM departamento
-WHERE NOT zona = 'Zona a';
+
 
 -- Seleccionar a todos los empleados que tengan como apellido paterno 'Baltazar'
 -- O que su apellido materno sea 'Peréz'
-SELECT * 
-FROM empleado
-WHERE apellido_paterno = 'Baltazar' OR apellido_materno = 'Peréz';
+
 
 -- Obtener el nombre y sueldo semanal de aquellos empleados que hayan nacido después del
 -- año 2000 y pertenezcan al departamento D01, O que su sueldo semanal sea mayor o igual a $10,000
-SELECT nombre, sueldo_mensual / 4 AS sueldo_semanal
-FROM empleado
-WHERE (fecha_nacimiento > '2000-12-31' AND id_departamento = 'D01') 
-	  OR sueldo_mensual / 4 >= 10000;
