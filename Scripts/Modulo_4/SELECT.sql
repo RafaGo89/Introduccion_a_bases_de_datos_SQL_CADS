@@ -15,7 +15,7 @@ Estructura básica de una consulta
 -- CONSULTAS BÁSICAS
 
 -- Seleccionamos la base de datos con la que trabajaremos
-USE tienda;
+USE tienda_2;
 
 -- Seleccionar todos los datos de la tabla 'Empleado'
 SELECT * FROM empleado;
@@ -141,16 +141,15 @@ WHERE nombre = 'Federico';
 -- $5,000 o menos a la semana
 SELECT id, nombre, (sueldo_mensual / 4) AS sueldo_semanal
 FROM empleado
-WHERE (sueldo_mensual / 4) < 5000;
+WHERE (sueldo_mensual / 4) <= 5000;
 
--- Seleccionar el id, nombre, sueldo semanal, sueldo por 3 semanas
--- de los empleados que ganen más de $10,000 en 3 semanas de trabajo
+-- Seleccionar el id, nombre y sueldo diario (considerando una semana de trabajo de 6 dias)
+-- de los empleados que ganen más de 800 pesos diarios
 SELECT id, 
 	   nombre, 
-      (sueldo_mensual / 4) AS sueldo_semanal, 
-	   (sueldo_mensual / 4) * 3 AS sueldo_por_3_semanas
+      ((sueldo_mensual / 4) / 6) AS sueldo_diario
 FROM empleado
-WHERE (sueldo_mensual / 4) * 3 > 10000;
+WHERE ((sueldo_mensual / 4) / 6) > 800;
 
 
 -- OPERADORES LÓGICOS
