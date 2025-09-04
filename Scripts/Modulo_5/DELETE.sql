@@ -3,7 +3,7 @@
 	Modulo 5: DML - DELETE
 */
 
-USE tienda;
+USE tienda_2;
 
 /* Sintaxis básica para actualizar registros
 
