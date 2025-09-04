@@ -12,7 +12,7 @@ Estructura básica de una consulta con ORDER BY
     
 */
 
-USE tienda;
+USE tienda_2;
 
 -- Seleccionamos a todos los empleados ordenados por el sueldo_mensual
 -- El ordenamiento es ASCENDENTE por default
