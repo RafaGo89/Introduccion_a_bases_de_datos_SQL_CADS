@@ -3,6 +3,9 @@
 	Modulo 5: DML - Más datos
 */
 
+-- Seleccionamos la base de datos a usar
+USE tienda_2;
+
 -- Insertamos más departamentos
 INSERT INTO departamento (id, nombre, zona, sueldo_minimo)
 VALUES
