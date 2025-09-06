@@ -63,8 +63,9 @@ SELECT DISTINCT id, id_departamento, nombre FROM empleado;
 -- PEQUEÑO EJERCICIO
 
 -- Seleccionar el nombre, id y sueldo de los últimos 3 empleados
-
-
+SELECT nombre, id, sueldo_mensual
+FROM empleado
+LIMIT 10, 3;
 
 -- OPERADORES ARITMÉTICOS
 
@@ -92,7 +93,11 @@ FROM empleado;
 
 -- Seleccionar el nombre, apellido materno, apellido paterno y sueldo anual
 -- de todos los empleados (agregar alias al sueldo anual)
-
+SELECT nombre, 
+       apellido_materno, 
+		 apellido_paterno, 
+		 sueldo_mensual * 12 AS sueldo_anual
+FROM empleado;
 
 
 -- ClÁUSULA WHERE & OPERADORES DE COMPARACIÓN
@@ -133,11 +138,26 @@ WHERE nombre = 'Federico';
 
 -- Seleccionar el id, nombre y sueldo semanal, de los empleados que ganen
 -- $5,000 o menos a la semana
+SELECT id, nombre, (sueldo_mensual / 4) AS sueldo_semanal
+FROM empleado
+WHERE (sueldo_mensual / 4) <= 5000;
 
 
 -- Seleccionar el id, nombre y sueldo diario (considerando una semana de trabajo de 6 dias)
 -- de los empleados que ganen más de 800 pesos diarios
+SELECT id, 
+	   nombre, 
+      ((sueldo_mensual / 4) / 6) AS sueldo_diario
+FROM empleado
+WHERE ((sueldo_mensual / 4) / 6) > 800;
 
+/* Alternativa
+SELECT id, 
+	   nombre, 
+      sueldo_mensual / 24 AS sueldo_diario
+FROM empleado
+WHERE sueldo_mensual / 24> 800;
+*/
 
 
 -- OPERADORES LÓGICOS
