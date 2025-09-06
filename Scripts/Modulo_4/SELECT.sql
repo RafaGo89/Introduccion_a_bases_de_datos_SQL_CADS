@@ -15,7 +15,7 @@ Estructura básica de una consulta
 -- CONSULTAS BÁSICAS
 
 -- Seleccionamos la base de datos con la que trabajaremos
-USE tienda;
+USE tienda_2;
 
 -- Seleccionar todos los datos de la tabla 'Empleado'
 SELECT * FROM empleado;
