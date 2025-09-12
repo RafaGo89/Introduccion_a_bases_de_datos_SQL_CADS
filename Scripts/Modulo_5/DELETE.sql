@@ -56,6 +56,7 @@ WHERE apellido_materno = 'Fernández';
 SELECT * FROM empleado
 WHERE apellido_materno = 'Fernández';
 
+-- También podemos borrar registros usando operadores lógicos
 -- Eliminamos a los empleados que pertenezcan a esos departamentos (D04, D06)
 SELECT * FROM empleado
 WHERE id_departamento = 'D04' OR id_departamento = 'D06';
@@ -67,9 +68,6 @@ WHERE id_departamento = 'D04' OR id_departamento = 'D06';
 -- Vemos que se han eliminado, ahora sí podemos borrar los departamentos como tal
 SELECT * FROM empleado
 WHERE id_departamento = 'D04' OR id_departamento = 'D06';
-
-
--- También podemos borrar registros usando operadores lógicos
 
 -- Eliminar el registro de los empleados que pertenezcan al departamento DO2 y ganen más
 -- de 425,000

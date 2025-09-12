@@ -51,11 +51,6 @@ SELECT nombre, sueldo_mensual, fecha_nacimiento
 FROM empleado
 ORDER BY sueldo_mensual, fecha_nacimiento;
 
--- Igualmente, podemos definir diferentes tipos de ordenamiento para nuestros criterios
-SELECT nombre, sueldo_mensual, fecha_nacimiento 
-FROM empleado
-ORDER BY sueldo_mensual DESC, fecha_nacimiento ASC;
-
 -- Si combinamos ORDER BY y LIMIT, podemos crear 'TOPS'
 
 -- Obtener nombre, apellido paterno y sueldo de los 5 empleados con mayor sueldo en la empresa
@@ -63,14 +58,6 @@ SELECT nombre, apellido_paterno, sueldo_mensual
 FROM empleado
 ORDER BY sueldo_mensual DESC
 LIMIT 5;
-
--- Obtener nombre, apellido paterno y fecha de nacimiento 
--- de los 3 empleados con menor edad en la empresa
-SELECT nombre, apellido_paterno, fecha_nacimiento
-FROM empleado
-ORDER BY fecha_nacimiento DESC
-LIMIT 3;
-
 
 -- Manejo de valores NULL
 

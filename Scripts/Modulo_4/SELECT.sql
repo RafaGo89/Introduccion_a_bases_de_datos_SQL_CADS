@@ -191,22 +191,13 @@ WHERE fecha_nacimiento >= '1999-01-01' AND fecha_nacimiento <= '1999-12-31';
 SELECT * 
 FROM empleado
 WHERE fecha_nacimiento > '1998-12-31' AND fecha_nacimiento < '2000-01-01';
-
--- Obtener nombre y fecha de nacimiento de aquellos empleados que hayan nacido
--- en del año 1999 al 2003
-SELECT * 
-FROM empleado
-WHERE fecha_nacimiento >= '1999-01-01' AND fecha_nacimiento <= '2003-12-31';
-      
       
 -- PEQUEÑO EJERCICIO
-
--- Seleccionar todos los datos de los departamentos que NO pertenecen a la Zona A
-
 
 -- Seleccionar a todos los empleados que tengan como apellido paterno 'Baltazar'
 -- O que su apellido materno sea 'Peréz'
 
+-- Obtener nombre y fecha de nacimiento de aquellos empleados que hayan nacido
+-- en del año 1999 al 2003
 
--- Obtener el nombre y sueldo semanal de aquellos empleados que hayan nacido después del
--- año 2000 y pertenezcan al departamento D01, O que su sueldo semanal sea mayor o igual a $10,000
+-- Seleccionar todos los datos de los departamentos que NO pertenecen a la Zona A

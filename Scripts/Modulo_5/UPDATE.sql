@@ -46,7 +46,8 @@ SET SQL_SAFE_UPDATES = 1;
 
 -- Como SI hacer un UPDATE
 
-SELECT * FROM empleado;
+SELECT * FROM empleado
+WHERE id = 1;
 
 -- Cambiamos el sueldo del empleado con la ID 1 a $16,000
 UPDATE empleado
@@ -54,20 +55,8 @@ SET sueldo_mensual = 16000
 WHERE id = 1;
 
 -- Visualizamos el cambio en el registro
-SELECT * FROM empleado;
-
--- Nos fijamos en el sueldo del empleado con ID 12
 SELECT * FROM empleado
-WHERE id = 12;
-
--- Actualizamos el sueldo del empleado con ID 12 a $13,500
-UPDATE empleado
-SET sueldo_mensual = 13500
-WHERE ID = 12;
-
--- Vemos que el sueldo se ha actualizado
-SELECT * FROM empleado
-WHERE id = 12;
+WHERE id = 1;
 
 -- Podemos usar otro campo que no sea la llave primaria
 -- en la clausula WHERE, pero debemos quitar el modo seguro de MySQL
@@ -115,19 +104,6 @@ WHERE id = 3;
 SELECT * FROM empleado
 WHERE id = 3;
 
--- Restamos $3,000 al sueldo del empleado con ID 3
-SELECT * FROM empleado
-WHERE id = 3;
-
--- Aplicamos el comando UPDATE
-UPDATE empleado
-SET sueldo_mensual = sueldo_mensual - 3000
-WHERE id = 3;
-
--- Visualizamos el cambio
-SELECT * FROM empleado
-WHERE id = 3;
-
 -- Podemos usar operadores lógicos para actualizaciones más complejas
 
 -- Agregamos $10,000 al sueldo de los empleados del departamento D02
@@ -160,7 +136,6 @@ WHERE id_departamento = 'D02' AND fecha_nacimiento >= '2000-01-01';
 -- Aplicamos el comando UPDATE
 
 -- Visualizamos el cambio
-
 
 -- Otra manera de hacerlo
 
