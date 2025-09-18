@@ -127,30 +127,7 @@ WHERE poblacion = (SELECT MAX(poblacion)
 -- Obtener nombre y población de las ciudades con una población
 -- menor a la del promedio de todas las ciudades. Ordenarlas descendentemente y hacerlo con
 -- subconculta
-SELECT nombre, poblacion
-FROM ciudad
-WHERE poblacion < (SELECT AVG(poblacion)
-                   FROM ciudad)
-ORDER BY poblacion DESC;
 
 -- Obtener la población de la ciudad más pequeña de Argentina
-SELECT MIN(poblacion)
-FROM ciudad
-WHERE id_pais = 'ARG';
 
--- Seleccionar el nombre y fecha de instalación más reciente de las estaciones, hacerlo con variable
-
--- Declaramos la variable para guardar la fecha
-SET @fecha_mas_reciente = '';
-
--- Guardamos la fecha más reciente usando MAX en la variable
-SELECT MAX(fecha_instalacion) INTO @fecha_mas_reciente
-FROM estacion;
-
--- Visualiazmos la fecha
-SELECT @fecha_mas_reciente;
-
--- Mostramos el nombre y la fecha de instalacion en base al filtro de la variable
-SELECT nombre, fecha_instalacion
-FROM estacion
-WHERE fecha_instalacion = @fecha_mas_reciente;
+-- Seleccionar el nombre y fecha de instalación más reciente de las estacioneS
