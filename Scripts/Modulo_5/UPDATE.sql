@@ -124,20 +124,22 @@ WHERE id_departamento = 'D02' AND fecha_nacimiento >= '2000-01-01';
 -- Pequeños ejercicios
 
 -- Aumentar el sueldo de los empleados nacidos antes del año 2000 en $2500
-
--- Aplicamos el comando UPDATE
-
--- Visualizamos el cambio
-
+UPDATE empleado
+SET sueldo_mensual = sueldo_mensual + 2500
+WHERE fecha_nacimiento < '2000-01-01';
 
 -- Disminuir el sueldo en $1,200 de los empleados con nombre Beatriz o Diana
 -- Y que hayan nacido en 1970
-
--- Aplicamos el comando UPDATE
-
--- Visualizamos el cambio
+UPDATE empleado
+SET sueldo_mensual = sueldo_mensual - 1200
+WHERE (nombre = 'Beatriz' OR nombre = 'Diana') AND 
+(fecha_nacimiento >= '1970-01-01' AND fecha_nacimiento <= '1970-12-31');
 
 -- Otra manera de hacerlo
+UPDATE empleado
+SET sueldo_mensual = sueldo_mensual + 1200
+WHERE (nombre = 'Beatriz' OR nombre = 'Diana') AND 
+YEAR(fecha_nacimiento) = '1970';
 
 -- Reestablecemos el modo seguro
 SET SQL_SAFE_UPDATES = 1;

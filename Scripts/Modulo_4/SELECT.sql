@@ -196,8 +196,16 @@ WHERE fecha_nacimiento > '1998-12-31' AND fecha_nacimiento < '2000-01-01';
 
 -- Seleccionar a todos los empleados que tengan como apellido paterno 'Baltazar'
 -- O que su apellido materno sea 'Peréz'
+SELECT * 
+FROM empleado
+WHERE apellido_paterno = 'Baltazar' OR apellido_materno = 'Peréz';
 
 -- Obtener nombre y fecha de nacimiento de aquellos empleados que hayan nacido
 -- en del año 1999 al 2003
+SELECT * 
+FROM empleado
+WHERE fecha_nacimiento >= '1999-01-01' AND fecha_nacimiento <= '2003-12-31';
 
 -- Seleccionar todos los datos de los departamentos que NO pertenecen a la Zona A
+SELECT * FROM departamento
+WHERE NOT zona = 'Zona a';

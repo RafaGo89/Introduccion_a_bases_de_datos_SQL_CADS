@@ -82,7 +82,13 @@ WHERE apellido_materno IS NULL;
 
 -- Obtener nombre y sueldo minimo de los departamentos, ordenados descendentemente
 -- por el sueldo_minimo
-
+SELECT nombre, sueldo_minimo
+FROM departamento
+ORDER BY sueldo_minimo DESC;
 
 -- Seleccionar la id, el nombre, apellido materno e email de aquellos empleados
 -- que no tengan email y si cuenten con apellido materno registrado
+SELECT id, nombre, apellido_materno, email
+FROM empleado
+WHERE apellido_materno IS NOT NULL
+      AND email IS NULL;

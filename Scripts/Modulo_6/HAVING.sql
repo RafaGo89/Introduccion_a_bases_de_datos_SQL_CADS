@@ -92,23 +92,9 @@ HAVING conteo_de_registros >= 5;
 -- Pequeños ejercicios
 
 -- Obtener las estaciones que hayan registrado una humedad máxima mayor al 95%
-SELECT id_estacion, MAX(humedad) AS humedad_maxima
-FROM registros_clima
-GROUP BY id_estacion
-HAVING humedad_maxima > 95;
 
 -- Obtener las estaciones cuyo valor más pequeño de velocidad del viento registrado
 -- sea menor o igual 5 km/h. Ordenalo ascendentemente por la velocidad del viento
-SELECT id_estacion, MIN(velocidad_viento) AS velocidad_viento_minima
-FROM registros_clima
-GROUP BY id_estacion
-HAVING velocidad_viento_minima <= 5
-ORDER BY velocidad_viento_minima ASC;
 
 -- Obtener a los países con una población total de entre 5,000,000 y 10,000,000.
 -- Ordenados por población de manera descendente
-SELECT id_pais, SUM(poblacion) AS suma_poblacion
-FROM ciudad
-GROUP BY id_pais
-HAVING suma_poblacion BETWEEN 5000000 AND 10000000
-ORDER BY suma_poblacion DESC;

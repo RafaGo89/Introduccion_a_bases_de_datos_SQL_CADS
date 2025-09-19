@@ -80,21 +80,8 @@ GROUP BY id_pais WITH ROLLUP;
 -- Pequeños ejercicios
 
 -- Obtener la superficie promedio por país (Usar alias).
-SELECT id_pais, AVG(superficie) AS superficie_promedio
-FROM ciudad
-GROUP BY id_pais;
 
 -- Del ejercicio anterior, muestra los 3 países con mayor superficie promedio
-SELECT id_pais, AVG(superficie) AS superficie_promedio
-FROM ciudad
-GROUP BY id_pais
-ORDER BY AVG(superficie) DESC
-LIMIT 3;
 
 -- Obtener el conteo de mantenimientos recibidos por estación, ordenados de menor a mayor
 -- por el número de mantenimientos recibidos. Incluir el total de mantenimientos hechos
-SELECT COALESCE(id_estacion, 'Total mantenimientos') AS estacion, 
-       COUNT(id_estacion)
-FROM mantenimiento
-GROUP BY id_estacion WITH ROLLUP
-ORDER BY COUNT(id_estacion) ASC;
