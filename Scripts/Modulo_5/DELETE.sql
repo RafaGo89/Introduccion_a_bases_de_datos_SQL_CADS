@@ -88,15 +88,36 @@ WHERE id_departamento = 'D02' AND sueldo_mensual > 25000;
 -- PEQUEÑO EJERCICIO
 
 -- Eliminar a todos los empleados que no tengan un email registrado
+SELECT *
+FROM empleado
+WHERE email IS NULL;
 
 -- Aplicamos el comando DELETE
+DELETE FROM empleado
+WHERE email IS NULL;
 
 -- Verificamos que los empleados se borraron
-
+SELECT *
+FROM empleado
+WHERE email IS NULL;
 
 -- ELiminar a los empleados que hayan nacido del año 1990 a 2001 o que no cuenten con un departamento
 -- asignado
+SELECT *
+FROM empleado
+WHERE (YEAR(fecha_nacimiento) >= 1990
+  AND YEAR(fecha_nacimiento) <= 2001)
+OR id_departamento IS NULL;
 
 -- Aplicamos el comando DELETE
+DELETE FROM empleado
+WHERE (YEAR(fecha_nacimiento) >= 1990
+  AND YEAR(fecha_nacimiento) <= 2001)
+OR id_departamento IS NULL;
 
 -- Verificamos que se eliminaron los registros
+SELECT *
+FROM empleado
+WHERE (YEAR(fecha_nacimiento) >= 1990
+  AND YEAR(fecha_nacimiento) <= 2001)
+OR id_departamento IS NULL;
