@@ -161,11 +161,25 @@ COLLATE utf8mb4_bin;
 
 -- Seleccionar la id y descripción de los mantenimientos hechos a las estaciones, de aquellos registros
 -- que contengan la palabra 'solar' dentro de su descripción
+SELECT id, descripcion
+FROM mantenimiento
+WHERE descripcion LIKE '%solar%';
 
 -- Obtener el nombre y población de las ciudades que NO tengan una población entre 1,000,000 y 2,200,000
 -- Ordenado descendentemente por cantidad de población
+SELECT nombre, poblacion
+FROM ciudad
+WHERE poblacion NOT BETWEEN 1000000 AND 2200000
+ORDER BY poblacion DESC;
 
--- Obtener el nombre y la población de las siguiente ciudades: Miami, Buenos Aires y Lima, ordenado ascendentemente
+-- Obtener la población de las siguiente ciudades: Miami, Buenos Aires y Lima, ordenado ascendentemente
+SELECT nombre, poblacion
+FROM ciudad
+WHERE nombre IN ('Miami', 'Buenos Aires', 'Lima')
+ORDER BY poblacion ASC;
 
 -- Obtener nombre y fecha de instalación de aquellas estaciones que se hayan instalado
 -- desde el 15 febrero de 2018 hasta el 19 febrero de 2019
+SELECT nombre, fecha_instalacion
+FROM estacion
+WHERE fecha_instalacion BETWEEN '2018-02-15' AND '2019-02-19';
