@@ -55,11 +55,13 @@ FROM estacion;
 
 -- Podemos poner más 1 función de agregado en una sentencia
 -- Obtenemos la suma total de las poblaciones de las ciudades
-SELECT SUM(poblacion) AS Suma, AVG(poblacion) AS Promedio
+SELECT SUM(poblacion) AS Suma, 
+       AVG(poblacion) AS Promedio
 FROM ciudad;
 
 -- No podemos hacer esto: traer una columna y luego una función de agregación
-SELECT nombre, AVG(poblacion)
+SELECT nombre, 
+       AVG(poblacion)
 FROM ciudad;
 
 -- Podemos usar WHERE en conjunto con las funciones agregadas
@@ -127,7 +129,26 @@ WHERE poblacion = (SELECT MAX(poblacion)
 -- Obtener nombre y población de las ciudades con una población
 -- menor a la del promedio de todas las ciudades. Ordenarlas descendentemente y hacerlo con
 -- subconculta
+SELECT nombre, poblacion
+FROM ciudad
+WHERE poblacion < (SELECT AVG(poblacion)
+                   FROM ciudad)
+ORDER BY poblacion DESC;
 
 -- Obtener la población de la ciudad más pequeña de Argentina
+SELECT MIN(poblacion)
+FROM ciudad
+WHERE id_pais = 'ARG';
 
--- Seleccionar el nombre y fecha de instalación más reciente de las estacioneS
+SELECT nombre,
+       poblacion
+FROM ciudad
+WHERE poblacion = (SELECT MIN(poblacion)
+                   FROM ciudad
+                   WHERE id_pais = 'ARG');
+
+-- Seleccionar el nombre y fecha de instalación más reciente de las estaciones
+SELECT nombre, fecha_instalacion
+FROM estacion
+WHERE fecha_instalacion = (SELECT MAX(fecha_instalacion)
+                           FROM estacion);

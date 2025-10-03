@@ -74,26 +74,10 @@ ON estacion.id = registros_clima.id_estacion;
 
 -- Mostrar el nombre de todas las condiciones climáticas  
 -- que nunca han sido registradas en la tabla registros_clima. Usa LEFT JOIN
-SELECT condicion_climatica.nombre
-FROM condicion_climatica
-LEFT JOIN registros_clima
-ON condicion_climatica.id = registros_clima.id_condicion_climatica
-WHERE registros_clima.id_condicion_climatica IS NULL;
 
 -- Mostrar el nombre de las estaciones que no han recibido algún mantenimiento.
 -- Usar RIGHT JOIN
-SELECT estacion.nombre AS Estaciones
-FROM mantenimiento
-RIGHT JOIN estacion
-ON mantenimiento.id_estacion = estacion.id
-WHERE mantenimiento.id_estacion IS NULL;
 
 -- Lista todas las ciudades (nombres) con sus estaciones meteorológicas (nombre),
 -- incluso si no tienen ninguna estación. Usar RIGHT ó LEFT JOIN
 -- Ordena el resultado por nombre de ciudad (A-Z)
-SELECT ciudad.nombre AS Ciudad,
-       estacion.nombre AS Estacion
-FROM ciudad
-LEFT JOIN estacion
-ON ciudad.id = estacion.id_ciudad
-ORDER BY ciudad.nombre ASC;
